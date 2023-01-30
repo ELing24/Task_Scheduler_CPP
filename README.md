@@ -15,6 +15,14 @@ undo these operations.
 
 > * Why this project is important or interesting to us:
 > * What languages/tools/technologies do we plan to use:
+> ### Tools and Languages
+> * C++ - Programming Language Used
+> * Github - Tool used for remote repository
+> * CMake - Tool use to compile and run code
+> * googletest - Tool for writing and running unit tests
+> * Make - Tool to build executables 
+> * draw.io - Tool use to make UML diagrams
+> * valgrind - Tool used for memory access error and leak detections
 > * What will be the input/output of our project:
 > * What features does our project provide:
 
