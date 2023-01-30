@@ -18,7 +18,7 @@ undo these operations.
 > ### Tools and Languages
 > * C++ - Programming Language Used
 > * Github - Tool used for remote repository
-> * CMake - Tool use to compile and run code
+> * CMake - Tool used to compile and run code
 > * Googletest - Tool for writing and running unit tests
 > * Make - Tool to build executables 
 > * Draw.io - Tool use to make UML diagrams
