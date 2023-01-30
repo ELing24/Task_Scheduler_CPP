@@ -21,7 +21,7 @@ undo these operations.
 > * CMake - Tool used to compile and run code
 > * Googletest - Tool for writing and running unit tests
 > * Make - Tool to build executables 
-> * Draw.io - Tool use to make UML diagrams
+> * Draw.io - Tool used to make UML diagrams
 > * Valgrind - Tool used for memory access error and leak detections
 > * What will be the input/output of our project:
 > * What features does our project provide:
