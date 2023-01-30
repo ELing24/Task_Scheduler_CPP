@@ -4,19 +4,18 @@
  
  > Authors: [Abel Challa](https://github.com/abelchalla), [Ethan Lingad](https://github.com/EthanL0224), [Anjali Daryani](https://github.com/adary001), [Siyu Li](https://github.com/slialex)
 
-## Project Description
-
-> ### Description**: In this application, a user can create tasks including a title, description,
+> ### Project Description
+> * Description: In this application, a user can create tasks including a title, description,
 classification (e.g. personal, work, study), priority, duration and due date. Some of these
 features can also be optional. Users can also create task lists where each list includes
 multiple tasks. Task lists can represent larger tasks that have subtasks within them.
 Users can display, edit, and delete tasks and task lists. Users should also be able to
 undo these operations. 
 
-> * Why this project is important or interesting to us:
+
 > ### Important or interesting to us
 > * As a college student there are many assignments and projects every week. To complete these assignments efficiently and on time, we need to have a proper planning for these projects. Therefore, a task scheduler is necessary for us. This application can help us to schedule our time properly. This way, we can avoid missing or not being able to finish our assignments due to lack of time. It also helps us to prioritize our assignments according to their complexity and deadline, so that we don't have too many assignments to start with.
-> * What languages/tools/technologies do we plan to use:
+
 > ### Tools and Languages
 > * C++ - Programming Language Used
 > * Github - Tool used for host of remote repository
