@@ -17,7 +17,7 @@ undo these operations.
 > * What languages/tools/technologies do we plan to use:
 > ### Tools and Languages
 > * C++ - Programming Language Used
-> * Github - Tool used for remote repository
+> * Github - Tool used for host of remote repository
 > * CMake - Tool used to compile and run code
 > * Googletest - Tool for writing and running unit tests
 > * Make - Tool to build executables 
