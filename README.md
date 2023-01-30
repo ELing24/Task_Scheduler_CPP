@@ -6,7 +6,7 @@
 
 ## Project Description
 
-> **Description**: In this application, a user can create tasks including a title, description,
+> ### Description**: In this application, a user can create tasks including a title, description,
 classification (e.g. personal, work, study), priority, duration and due date. Some of these
 features can also be optional. Users can also create task lists where each list includes
 multiple tasks. Task lists can represent larger tasks that have subtasks within them.
