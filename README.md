@@ -26,11 +26,10 @@ undo these operations.
 > * Valgrind - Tool used for memory access error and leak detections
 > ### Input and Output
 Inputs:
-* Task specifications (task title, description, status, deadline)
-* Initial state of the system being simulated
+* Task specifications (task title, description, classification, priority, duration, deadline)
 
 Outputs:
-* Visualization of the simulation results
+* Visualization of the simulation results based on inputs and priority sorting
 > ### Features
 > * The user of the program will be able to enter subtasks integrated inside of the task. As an example, if the user creates a task that's called "Clean Kitchen", then the user can also create subtasks within that task such as "Wash Dishes", "Take Out Trash", "Clean Out Refrigerator", or "Wipe Counters". Users will be prompted to enter the name of the task, a description of the task, the status of the task, and the deadline for the task. Users can prioritize tasks by ranking them in order of importance. Depending on each task's priority, the program would output the tasks in a particular format. The user can evaluate whether task is more significant than the other by viewing it in a specific manner. Users can be able to edit and delete tasks. The user has the flexibility to alter the name, description, due date, and status whenever they want. A user has the option to delete a task if they decide they no longer want it to be visible. Users have the option to undo their activity if they accidentally edit tasks in the wrong way. The user won't have to delete and start a brand-new task as a result.
 
