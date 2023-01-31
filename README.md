@@ -28,6 +28,7 @@ undo these operations.
 Inputs:
 * Task specifications (task title, description, status, deadline)
 * Initial state of the system being simulated
+
 Outputs:
 * Visualization of the simulation results
 > ### Features
