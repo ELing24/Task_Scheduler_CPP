@@ -19,7 +19,7 @@ class Project{
         void editProject_Description(Project*);
         void undo_Names();
         void undo_Description();
-        void deleteTask(string);
+        void deleteTask();
         subtask findSubtask(Task*);
         Task getTask();
         void outputTasks();

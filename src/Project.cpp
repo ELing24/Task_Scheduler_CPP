@@ -8,16 +8,12 @@ Project::Project(string n, string d)
 void Project::addTask(string n, string d, string dead, int p, bool status)
 {
     Task *tmp = new Task(n, d, dead, p, status);
-    sortByPriority() {
-    sort(tasks.begin(), tasks.end(), [](Task* t1, Task* t2) {
-        return t1->getPriority() < t2->getPriority();
-    });
-}
+    sortByPriority();
     tasks.push_back(tmp);
 }
 int Project::completedTasks()
 {
-    int cnt;
+    int cnt = 0;
     for(int i = 0; i < tasks.size(); ++i)
     {
         if(tasks[i]->status == true)
@@ -121,12 +117,12 @@ void Project::editTask(){
             cin >> option;
             while(true)
             {
-                if(string == "1")
+                if(option == "1")
                 {
                     tmp->changeStatus(true);
                     break;
                 }
-                else if(string == "0"){
+                else if(option == "0"){
                     tmp->changeStatus(false);
                     break;
                 }
@@ -162,7 +158,6 @@ void Project::sortByPriority() {
 }
 void Project::printTasksByPriority() {
     sortByPriority();
-    
 
     for (int i = 0; i < tasks.size(); ++i) {
         Task* task = tasks[i];
@@ -172,5 +167,25 @@ void Project::printTasksByPriority() {
         cout << "Priority: " << task->getPriority() << endl;
         cout << "Status: " << (task->getStatus() ? "Complete" : "Incomplete") << endl;
         cout << "----------------------" << endl;
+    }
+}
+void Project::deleteTask()
+{
+    cout << "Enter the name of the Task that you want to delete: " << endl;
+    string name = "";
+    cin >> name;
+    while(true)
+    {
+        for (auto t = tasks.begin(); t != tasks.end(); ++t)
+        {
+            if ((*t)->getName() == name)
+            {
+                delete (*t);
+                tasks.erase(t);
+                return;
+            }
+        }
+        cout << "Name not found, Try Again: " << endl;
+        cin >> name;
     }
 }
