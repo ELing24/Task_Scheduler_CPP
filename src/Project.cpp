@@ -25,8 +25,8 @@ int Project::completedTasks()
 }
 void Project::editProject_Description(string d)
 {
-    descriptions.push_back(this->descriptions);
-    this->descriptions = d;
+    descriptions.push_back(this->description);
+    this->description = d;
 }
 void Project::editProjectName(string n)
 {
@@ -77,9 +77,7 @@ Task* Project::getTask()
 void Project::editTask(){
     Task* tmp = getTask();
     string whichToChange = "";
-    cout << "Enter name to modify name, description to modify description
-        deadline to modify deadline, status to modify status, or 
-        priority to change priority" << endl;
+    cout << "Enter name to modify name, description to modify description deadline to modify deadline, status to modify status, or priority to change priority" << endl;
     cin >> whichToChange;
     while(true)
     {
@@ -156,7 +154,7 @@ void Project::sortByPriority() {
         return t1->getPriority() < t2->getPriority();
     });
 }
-void Project::printTasksByPriority() {
+void Project::outputTasks() {
     sortByPriority();
 
     for (int i = 0; i < tasks.size(); ++i) {
@@ -189,3 +187,68 @@ void Project::deleteTask()
         cin >> name;
     }
 }
+void Project::editSubtask()
+{
+    Task* tmp = getTask();
+    subtask* Sub = tmp->getSubtask();
+    string whichToChange = "";
+    cout << "Enter name to modify name, description to modify description deadline to modify deadline, status to modify status, or priority to change priority" << endl;
+    cin >> whichToChange;
+    while(true)
+    {
+        if(whichToChange == "name")
+        {
+            string NewName;
+            cout << "Enter the name you want to change: " << endl;
+            cin >> NewName;
+            Sub->ChangeName(NewName);
+            break;
+        }
+        else if(whichToChange == "description")
+        {
+            string newDescription;
+            cout << "Enter the new description you want to change: " <<endl;
+            getline(cin, newDescription);
+            Sub->ChangeDescriptions(newDescription);
+            break;
+        }
+        else if(whichToChange == "status")
+        {
+            bool status;
+            string option;
+            cout << "Enter one if you want to make the status of task " <<  tmp->GetName()
+            << " complete or zero if status is uncomplete: " << endl;
+            cin >> option;
+            while(true)
+            {
+                if(option == "1")
+                {
+                    tmp->changeStatus(true);
+                    break;
+                }
+                else if(option == "0"){
+                    Sub->changeStatus(false);
+                    break;
+                }
+                else{
+                    cout << "Incorrect value, Try Again: " << endl;
+                    cin >> option;
+                }
+                
+            }
+            break;
+        }
+        else
+        {
+            cout << "Incorrect option, Try Again" << endl;
+            cin >> whichToChange;
+        }
+
+    }
+}
+Project::~Project() {
+    for (int i = 0; i < tasks.size(); ++i) {
+        delete tasks[i];
+    }
+}
+
