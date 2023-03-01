@@ -1,3 +1,6 @@
+#ifndef BASE_HPP
+#define BASE_HPP
+
 #include <vector>
 
 using namespace std;
@@ -26,3 +29,5 @@ class Base{
         void changeStatus(bool newStatus);
         void undoStatus();
 };
+
+#endif
