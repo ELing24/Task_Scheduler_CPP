@@ -35,16 +35,16 @@ void Project::editProjectName(string n)
 }
 void Project::undo_Description()
 {
-    if (descriptions.size() > 1) {
-        descriptions.pop_back();
+    if (descriptions.size() > 0) {
         description = descriptions.back();
+        descriptions.pop_back();
     }
 }
 void Project::undo_Names()
 {
-    if (names.size() > 1) {
-        names.pop_back();
+    if (names.size() > 0) {
         name = names.back();
+        names.pop_back();
     }
 }
 Task* Project::getTask()
