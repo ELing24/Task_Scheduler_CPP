@@ -1,28 +1,28 @@
-#include <iostream>
 #include <vector>
 
 using namespace std;
 
 class Base{
     private:
-        vector<string> descriptionList;
-        vector<string> nameList;
+        vector<string> names;
+        vector<string> descriptions;
         vector<bool> statusList;
         string name;
         string description;
         bool status;
     public:
         Base();
-        void changeStatus(bool newStatus);
+        Base(string newName, string newDescription, bool newStatus);
         void setName(string newName);
-        void setDescription(string newDescription);
-        void setStatus(bool newStatus);
         string getName();
-        string getDescription();
         void changeName(string newName);
-        void changeDescription(string newDescription);
         void undoName();
+        void setDescription(string newDescription);
+        string getDescription();
+        void changeDescription(string newDescription);
         void undoDescription();
-        void undoStatus();
+        void setStatus(bool newStatus);
         bool getStatus();
+        void changeStatus(bool newStatus);
+        void undoStatus();
 };
