@@ -90,7 +90,7 @@ void Project::editTask(){
             string NewName;
             cout << "Enter the name you want to change: " << endl;
             cin >> NewName;
-            tmp->ChangeName(NewName);
+            tmp->changeName(NewName);
             break;
         }
         else if(whichToChange == "description")
@@ -98,7 +98,7 @@ void Project::editTask(){
             string newDescription;
             cout << "Enter the new description you want to change: " <<endl;
             getline(cin, newDescription);
-            tmp->ChangeDescriptions(newDescription);
+            tmp->changeDescriptions(newDescription);
             break;
         }
         else if(whichToChange == "deadline")
@@ -106,7 +106,7 @@ void Project::editTask(){
             string newDeadline;
             cout << "Enter the new deadline you want to change: " << endl;
             cin>>newDeadline;
-            tmp->ChangeDeadline(newDeadline);
+            tmp->changeDeadline(newDeadline);
             break;
 
         }
@@ -206,7 +206,7 @@ void Project::editSubtask()
             string NewName;
             cout << "Enter the name you want to change: " << endl;
             cin >> NewName;
-            Sub->ChangeName(NewName);
+            Sub->changeName(NewName);
             break;
         }
         else if(whichToChange == "description")
@@ -214,7 +214,7 @@ void Project::editSubtask()
             string newDescription;
             cout << "Enter the new description you want to change: " <<endl;
             getline(cin, newDescription);
-            Sub->ChangeDescriptions(newDescription);
+            Sub->changeDescriptions(newDescription);
             break;
         }
         else if(whichToChange == "status")

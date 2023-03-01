@@ -1,6 +1,7 @@
 #ifndef PROJECT_HPP
 #define PROJECT_HPP
 #include "../header/Task.hpp"
+#include "../header/subtask.hpp"
 #include <vector>
 #include <iostream>
 using namespace std;
