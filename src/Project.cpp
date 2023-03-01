@@ -8,8 +8,8 @@ Project::Project(string n, string d)
 void Project::addTask(string n, string d, string dead, int p, bool status)
 {
     Task *tmp = new Task(n, d, dead, p, status);
-    sortByPriority();
     tasks.push_back(tmp);
+    sortByPriority();
 }
 int Project::completedTasks()
 {
@@ -49,31 +49,35 @@ void Project::undo_Names()
 }
 Task* Project::getTask()
 {
-    string findTask;
-    bool foundName = false;
-    cout << "Enter name of Task: " << endl;
-    cin >> findTask;
-    Task* tmp = nullptr;
-    while(foundName == false)
-    {
-        for(int i = 0; i < tasks.size();++i)
-        {
-            if(tasks[i]->getName() == findTask)
-            {
-                tmp = tasks[i];
-                foundName = true;
-            }
-        }
-        if(foundName == false)
-        {
-            cout << "Task doesn't exist, Try Again: " << endl;
-            cin >> findTask;
-        }
-        
-    }
-    return tmp;
-
+   string findTask;
+   bool foundName = false;
+   cout << "Enter name of Task: " << endl;
+   cin >> findTask;
+   Task* tmp = nullptr;
+   while (!foundName)
+   {
+       for (int i = 0; i < tasks.size(); ++i)
+       {
+           if (tasks[i]->getName() == findTask)
+           {
+               tmp = tasks[i];
+               foundName = true;
+               break;
+           }
+       }
+       if (!foundName)
+       {
+           cout << "Task doesn't exist, Try Again: " << endl;
+           cin >> findTask;
+       }
+   }
+   if (tmp == nullptr)
+   {
+       cout << "Task not found." << endl;
+   }
+   return tmp;
 }
+
 void Project::editTask(){
     Task* tmp = getTask();
     string whichToChange = "";
@@ -187,6 +191,7 @@ void Project::deleteTask()
         cin >> name;
     }
 }
+
 void Project::editSubtask()
 {
     Task* tmp = getTask();
@@ -246,7 +251,7 @@ void Project::editSubtask()
 
     }
 }
-Project::~Project() {
+Project::DesctuctorForTasks() {
     for (int i = 0; i < tasks.size(); ++i) {
         delete tasks[i];
     }
