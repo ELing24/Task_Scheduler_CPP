@@ -1,7 +1,6 @@
 #ifndef PROJECT_HPP
 #define PROJECT_HPP
 #include "../header/Task.hpp"
-#include "../header/subtask.hpp"
 #include <vector>
 #include <iostream>
 using namespace std;
@@ -14,19 +13,18 @@ class Project{
         string description;
     public:
         Project(string, string);
-        void DesctuctorForTasks();
+        ~Project();
         void addTask(string,string,string,int,bool);
         int completedTasks();
         bool iscompleted(string);
         void editProjectName(string);
-        void editTask();
-        void editSubtask();
         void editProject_Description(string);
         void undo_Names();
         void undo_Description();
-        void deleteTask();
-        Task* getTask();
+        void deleteTask(string);
+        Task* getTask(string);
         void outputTasks();
         void sortByPriority();
+        bool doesTaskExist(string);
 };
 #endif
