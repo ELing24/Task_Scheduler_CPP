@@ -12,7 +12,8 @@ class Task : public Base{
         vector<int> priority;
         vecctor<string> deadline;
     public:
-        void Task(string, string, string, int, bool);
+        Task(string, string, string, int, bool);
+        ~Task();
         void addSubtask(string, string, bool);
         void undoDeadline();
         void undoPriority();
@@ -25,6 +26,7 @@ class Task : public Base{
         subtask getSubtask(string);
         void outputsubs();
         void deleteSubtask(string);
+        bool doesSubtaskExist(string);
 };
 
 #endif
