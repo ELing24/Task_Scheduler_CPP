@@ -11,11 +11,11 @@ Project::~Project()
         delete tasks[i];
     }
 }
-void Project::addTask(string n, string d, Deadline dead, int p, bool status)
+void Project::addTask(string n, string d, int dead, int p, bool status)
 {
     Task *tmp = new Task(n, d, dead, p, status);
     tasks.push_back(tmp);
-    sortByPriority();
+
 }
 int Project::completedTasks()
 {
@@ -68,10 +68,7 @@ Task* Project::getTask(string TaskToFind)
         }
     }
    
-   if (tmp == nullptr)
-   {
-       cout << "Task not found." << endl;
-   }
+
    return tmp;
 }
 
@@ -80,18 +77,19 @@ void Project::sortByPriority() {
         return t1->getPriority() < t2->getPriority();
     });
 }
-void Project::outputTasks() {
+string Project::outputTasks() {
     sortByPriority();
-
+    stringstream os;
     for (int i = 0; i < tasks.size(); ++i) {
         Task* task = tasks[i];
-        cout << "Name: " << task->getName() << endl;
-        cout << "Description: " << task->getDescriptions() << endl;
-        cout << "Deadline: " << task->getDeadline() << endl;
-        cout << "Priority: " << task->getPriority() << endl;
-        cout << "Status: " << (task->getStatus() ? "Complete" : "Incomplete") << endl;
-        cout << "----------------------" << endl;
+        os << "Name: " << task->getName() << endl;
+        os << "Description: " << task->getDescriptions() << endl;
+        os << "Deadline: " << task->getDeadline() << endl;
+        os << "Priority: " << task->getPriority() << endl;
+        os << "Status: " << (task->getStatus() ? "Complete" : "Incomplete") << endl;
+        os << "----------------------" << endl;
     }
+    return os.str();
 }
 void Project::deleteTask(string name)
 {

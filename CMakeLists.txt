@@ -4,9 +4,16 @@ ADD_SUBDIRECTORY(test/googletest)
 
 ADD_EXECUTABLE(test
     test/test.cpp
-)
-ADD_EXECUTABLE(Project
     src/Project.cpp
+    src/Base.cpp
+    src/ProjectManager.cpp
+    src/Task.cpp
+)
+ADD_EXECUTABLE(runAllFiles
+    src/Project.cpp 
+    src/Base.cpp 
+    src/ProjectManager.cpp 
+    src/Task.cpp 
 )
 
 

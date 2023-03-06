@@ -3,6 +3,7 @@
 #include "../header/Task.hpp"
 #include <vector>
 #include <iostream>
+#include <sstream>
 using namespace std;
 class Project{
     private:
@@ -23,7 +24,7 @@ class Project{
         void undo_Description();
         void deleteTask(string);
         Task* getTask(string);
-        void outputTasks();
+        string outputTasks();
         void sortByPriority();
         bool doesTaskExist(string);
 };
