@@ -15,7 +15,7 @@ class Project{
     public:
         Project(string, string);
         ~Project();
-        void addTask(string,string,string,int,bool);
+        void addTask(string,string,int,int,bool);
         int completedTasks();
         bool iscompleted(string);
         void editProjectName(string);
