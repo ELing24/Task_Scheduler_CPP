@@ -1,12 +1,12 @@
 #include "../header/Base.hpp"
 
-Base::Base() {
+Subtask::Subtask() {
 	name = "";
 	description = "";
 	status = false;
 }
 
-Base::Base(string newName, string newDescription, bool newStatus){
+Subtask::Subtask(string newName, string newDescription, bool newStatus){
 	name = newName;
 	description = newDescription;
 	status = newStatus;
