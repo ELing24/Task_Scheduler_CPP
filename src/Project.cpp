@@ -71,14 +71,25 @@ Task* Project::getTask(string TaskToFind)
 
    return tmp;
 }
-
+void Project::sortByDeadline() {
+    sort(tasks.begin(), tasks.end(), [](Task* t1, Task* t2) {
+        return t1->getDeadline() < t2->getDeadline();
+    });
+}
 void Project::sortByPriority() {
     sort(tasks.begin(), tasks.end(), [](Task* t1, Task* t2) {
         return t1->getPriority() < t2->getPriority();
     });
 }
-string Project::outputTasks() {
-    sortByPriority();
+string Project::outputTasks(bool optionForOutputting) {
+    if(optionForOutputting == true)
+    {
+        sortByDeadline();
+    }
+    else
+    {
+        sortByPriority();
+    }
     stringstream os;
     for (int i = 0; i < tasks.size(); ++i) {
         Task* task = tasks[i];

@@ -24,7 +24,7 @@ class Project{
         void undo_Description();
         void deleteTask(string);
         Task* getTask(string);
-        string outputTasks();
+        string outputTasks(bool);
         void sortByPriority();
         bool doesTaskExist(string);
 };
