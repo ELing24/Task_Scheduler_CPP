@@ -12,60 +12,60 @@ Subtask::Subtask(string newName, string newDescription, bool newStatus){
 	status = newStatus;
 }
 
-void Base::setName(string newName){
+void Subtask::setName(string newName){
 	name = newName;
 }
 
-string Base::getName(){
+string Subtask::getName(){
 	return name;
 }
 
-void Base::changeName(string newName){
+void Subtask::changeName(string newName){
 	names.push_back(name);
 	name = newName;	
 }
 
-void Base::undoName(){
+void Subtask::undoName(){
 	if(names.size() > 0){
 		name = names.back();
 		names.pop_back();
 	}
 }
 
-void Base::setDescription(string newDescription){
+void Subtask::setDescription(string newDescription){
 	description = newDescription;
 }
 
-string getDescription(){
+string Subtask::getDescription(){
 	return description;
 }
 
-void Base::changeDescription(string newDescription){
+void Subtask::changeDescription(string newDescription){
 	descriptions.push_back(description);
 	description = newDescription;
 }
 
-void Base::undoDescription(){
-	if(descriptions > 0){
+void Subtask::undoDescription(){
+	if(descriptions.size() > 0){
 		description = descriptions.back();
 		descriptions.pop_back();
 	}
 }
 
-void Base::setStatus(bool newStatus){
+void Subtask::setStatus(bool newStatus){
 	status = newStatus;
 }
 
-bool Base::getStatus(){
+bool Subtask::getStatus(){
 	return status;
 }
 
-void Base::changeStatus(bool newStatus){
+void Subtask::changeStatus(bool newStatus){
 	statusList.push_back(status);
 	status = newStatus;
 }
 
-void Base::undoStatus(){
+void Subtask::undoStatus(){
 	if(statusList.size() > 0){
 		status = statusList.back();
 		statusList.pop_back();
