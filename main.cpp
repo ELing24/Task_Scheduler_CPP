@@ -205,24 +205,31 @@ int main()
                 else if(optionsForProject == 'O')
                 {
                     char optionForOutputtingFormat = '0';
-                    while(true)
+                    if(projectToEdit->sizeOfTasksVector() > 0)
                     {
-                        cout << "Enter 1 to output tasks according to deadline or 2 to output tasks according to priority:" << endl;
-                        cin >> optionForOutputtingFormat;
-                        if(optionForOutputtingFormat == '1')
+                        while(true)
                         {
-                            cout << projectToEdit->outputTasks(true) << endl;
-                            break;
+                            cout << "Enter 1 to output tasks according to deadline or 2 to output tasks according to priority:" << endl;
+                            cin >> optionForOutputtingFormat;
+                            if(optionForOutputtingFormat == '1')
+                            {
+                                cout << projectToEdit->outputTasks(true) << endl;
+                                break;
+                            }
+                            else if(optionForOutputtingFormat == '2')
+                            {
+                                cout << projectToEdit->outputTasks(false) << endl;
+                                break;
+                            }
+                            else
+                            {
+                                cout << "Invalid option, Try Again" << endl;
+                            }
                         }
-                        else if(optionForOutputtingFormat == '2')
-                        {
-                            cout << projectToEdit->outputTasks(false) << endl;
-                            break;
-                        }
-                        else
-                        {
-                            cout << "Invalid option, Try Again" << endl;
-                        }
+                    }
+                    else
+                    {
+                        cout << "You have no tasks in your inventory" << endl;
                     }
                 
                 }
@@ -425,23 +432,30 @@ int main()
                         }
                         else if(optionsForTasks == 'D')
                         {
-                            string findSubtask = "0";
-                            while(true)
+                            if(taskForUserToEdit->subtaskNumber() > 0)
                             {
-                                findSubtask = "0";
-                                cout << "Enter the name of the subtask you want to undo:" << endl;
-                                cin >> findSubtask;
-                                if(taskForUserToEdit->doesSubtaskExist(findSubtask)==true)
+                                string findSubtask = "0";
+                                while(true)
                                 {
-                                    break;
-                                }
-                                else
-                                {
-                                    cout << "Incorrect Option, Try Again" << endl;
-                                }
+                                    findSubtask = "0";
+                                    cout << "Enter the name of the subtask you want to delete:" << endl;
+                                    cin >> findSubtask;
+                                    if(taskForUserToEdit->doesSubtaskExist(findSubtask)==true)
+                                    {
+                                        break;
+                                    }
+                                    else
+                                    {
+                                        cout << "Incorrect Option, Try Again" << endl;
+                                    }
 
+                                }
+                                taskForUserToEdit->deleteSubtask(findSubtask);
                             }
-                            taskForUserToEdit->deleteSubtask(findSubtask);
+                            else
+                            {
+                                cout << "You have zero subtasks in this inventory" << endl;
+                            }
                         }
                         else if(optionsForTasks == 'P')
                         {
@@ -449,7 +463,14 @@ int main()
                         }
                         else if(optionsForTasks == 'O')
                         {
-                            cout << taskForUserToEdit->outputsubs() << endl;
+                            if(taskForUserToEdit_>subtaskNumber() > 0)
+                            {
+                                cout << taskForUserToEdit->outputsubs() << endl;
+                            }
+                            else
+                            {
+                                cout << "You have no subtasks in this inventory" << endl;
+                            }
                         }
                         
                     }
