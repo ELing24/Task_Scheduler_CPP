@@ -31,9 +31,13 @@ int main()
             cout << "Are you sure that you want to enter " << userOption << "?" << endl;
             cout << "Enter Y to continue or N to cancel:" << endl;
             cin >> checkIfUserIntentionallyPressed;
-            if(toupper(checkIfUserIntentionallyPressed) == "N")
+            if(toupper(checkIfUserIntentionallyPressed) == "N" || toupper(checkIfUserIntentionallyPressed) == "n")
             {
                 userOption == "0";
+                break;
+            }
+            else if(toupper(checkIfUserIntentionallyPressed) == "Y" || toupper(checkIfUserIntentionallyPressed) == "y")
+            {
                 break;
             }
             else
@@ -134,9 +138,13 @@ int main()
                     cout << "Are you sure that you want to enter " << optionsForProject << "?" << endl;
                     cout << "Enter Y to continue or N to cancel:" << endl;
                     cin >> checkIfUserIntentionallyPressed;
-                    if(toupper(checkIfUserIntentionallyPressed) == "N")
+                    if(toupper(checkIfUserIntentionallyPressed) == "N" || toupper(checkIfUserIntentionallyPressed) == "n")
                     {
                         optionsForProject == "0";
+                        break;
+                    }
+                    else if(toupper(checkIfUserIntentionallyPressed) == "Y" || toupper(checkIfUserIntentionallyPressed) == "y")
+                    {
                         break;
                     }
                     else
@@ -332,9 +340,13 @@ int main()
                             cout << "Are you sure that you want to enter " << optionsForTasks << "?" << endl;
                             cout << "Enter Y to continue or N to cancel:" << endl;
                             cin >> checkIfUserIntentionallyPressed;
-                            if(toupper(checkIfUserIntentionallyPressed) == "N")
+                            if(toupper(checkIfUserIntentionallyPressed) == "N" || toupper(checkIfUserIntentionallyPressed) == "n")
                             {
                                 optionsForTasks == "0";
+                                break;
+                            }
+                            else if(toupper(checkIfUserIntentionallyPressed) == "y" || toupper(checkIfUserIntentionallyPressed) == "Y")
+                            {
                                 break;
                             }
                             else
