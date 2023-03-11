@@ -27,5 +27,6 @@ class Project{
         string outputTasks(bool);
         void sortByPriority();
         bool doesTaskExist(string);
+        int sizeOfTasksVector();
 };
 #endif

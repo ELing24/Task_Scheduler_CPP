@@ -130,3 +130,7 @@ bool Project::doesTaskExist(string findTaskName)
     }
     return isTrue;
 }
+int Project::sizeOfTasksVector()
+{
+    return tasks.size()
+}
