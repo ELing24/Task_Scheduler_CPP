@@ -28,28 +28,43 @@ int main()
         cin >> userOption;
         if(toupper(userOption) == 'O')
         {
-            cout << mainProgram->outputProject() << endl;
+            if(mainProgram->ProjectSize() > 0)
+            {
+                cout << mainProgram->outputProject() << endl;
+            }
+            else
+            {
+                cout << "You have no projects in your inventory" << endl;
+            }
         }
         else if(toupper(userOption) == 'D')
         {
-            cout << mainProgram->outputProjects() << endl;
-            cout << "Enter the name of the Project you would like to delete:" << endl;
-            string ProjectToDelete = "0";
-            cin >> ProjectToDelete;
-            while(true)
+            if(mainProgram->ProjectSize() > 0)
             {
-                if(mainProgram->doesProjectExist(ProjectToDelete) == true)
+                cout << mainProgram->outputProjects() << endl;
+                cout << "Enter the name of the Project you would like to delete or type C to cancel:" << endl;
+                string ProjectToDelete = "0";
+                cin >> ProjectToDelete;
+                while(true)
                 {
-                    break;
+                    if(mainProgram->doesProjectExist(ProjectToDelete) == true)
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        cout << "Project does not exist, try again:" << endl;
+                        cin >> ProjectToDelete;
+                    }
                 }
-                else
-                {
-                    cout << "Project does not exist, try again:" << endl;
-                    cin >> userOption;
-                }
+                Project* tmp = mainProgram->getProject(ProjectToDelete);
+                mainProgram->deleteProject(tmp);
             }
-            Project* tmp = mainProgram->getProject(ProjectToDelete);
-            mainProgram->deleteProject(tmp);
+            else
+            {
+                cout << "You have no projects in your inventory" << endl;
+            }
+        
             
         }
         else if(toupper(userOption) == 'A')
