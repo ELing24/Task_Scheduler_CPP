@@ -17,7 +17,6 @@ int main()
     while(toupper(userOption) != 'Q')
     {
         system("CLS");
-        userOption = '0';
         cout << "Project Menu: " << endl;
         cout << "Enter O to output all projects:" << endl;
         cout << "Enter D to delete a project:" << endl;
@@ -26,6 +25,22 @@ int main()
         cout << "Enter E if you would like to edit/inspect a project:" << endl;
         cout << "Enter Q to quit program" << endl;
         cin >> userOption;
+        char checkIfUserIntentionallyPressed = "0";
+        while(true)
+        {
+            cout << "Are you sure that you want to enter " << userOption << "?" << endl;
+            cout << "Enter Y to continue or N to cancel:" << endl;
+            cin >> checkIfUserIntentionallyPressed;
+            if(toupper(checkIfUserIntentionallyPressed) == "N")
+            {
+                userOption == "0";
+                break;
+            }
+            else
+            {
+                cout << "Invalid Option, Try Again" << endl;
+            }
+        }
         if(toupper(userOption) == 'O')
         {
             if(mainProgram->ProjectSize() > 0)
@@ -42,7 +57,7 @@ int main()
             if(mainProgram->ProjectSize() > 0)
             {
                 cout << mainProgram->outputProjects() << endl;
-                cout << "Enter the name of the Project you would like to delete or type C to cancel:" << endl;
+                cout << "Enter the name of the Project you would like to delete:" << endl;
                 string ProjectToDelete = "0";
                 cin >> ProjectToDelete;
                 while(true)
@@ -113,6 +128,22 @@ int main()
                 cout << "Enter T to edit/inspect a task in this project:" << endl;
                 cout << "Enter S to get the amount of complete task for this project:" << endl;
                 cin >> optionsForProject;
+                char checkIfUserIntentionallyPressed = "0";
+                while(true)
+                {
+                    cout << "Are you sure that you want to enter " << optionsForProject << "?" << endl;
+                    cout << "Enter Y to continue or N to cancel:" << endl;
+                    cin >> checkIfUserIntentionallyPressed;
+                    if(toupper(checkIfUserIntentionallyPressed) == "N")
+                    {
+                        optionsForProject == "0";
+                        break;
+                    }
+                    else
+                    {
+                        cout << "Invalid Option, Try Again" << endl;
+                    }
+                }
                 optionsForProject = toupper(optionsForProject);
                 if(optionsForProject == 'P')
                 {
@@ -288,6 +319,22 @@ int main()
                         cout << "Enter Z to get the deadline of this task:" << endl;
                         cout << "Enter O to output all the subtasks in this task:" <<endl;
                         cin >> optionsForTasks;
+                        char checkIfUserIntentionallyPressed = "0";
+                        while(true)
+                        {
+                            cout << "Are you sure that you want to enter " << optionsForTasks << "?" << endl;
+                            cout << "Enter Y to continue or N to cancel:" << endl;
+                            cin >> checkIfUserIntentionallyPressed;
+                            if(toupper(checkIfUserIntentionallyPressed) == "N")
+                            {
+                                optionsForTasks == "0";
+                                break;
+                            }
+                            else
+                            {
+                                cout << "Invalid Option, Try Again" << endl;
+                            }
+                        }
                         optionsForTasks = toupper(optionsForTasks);
                         if(optionsForTasks == 'E')
                         {
