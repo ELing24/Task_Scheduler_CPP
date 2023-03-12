@@ -4,26 +4,41 @@
 #include "../header/ProjectManager.hpp"
 
 ProjectManager::ProjectManager() {
-    empty = true;
+     
 }
 
-void ProjectManager::deleteProject() {
-    string projectName;
-    cout << "Enter project name to delete: ";
-    cin >> projectName;
-            
-    for (int i = 0; i < projects.size(); i++) {
-        if (projects[i].getProjectName() == projectName) {
-            projects.erase(projects[i]);
-            cout << "Project " << projectName << " deleted." << endl;
-            return;
-            }
+
+ProjectManager::~ProjectManager() {
+    for (int i = 0; i < projects.size(); ++i) {
+        delete projects[i];
     }
-            
-    cout << "Project " << projectName << " not found." << endl;
 }
 
-void ProjectManager::outputProjects() {
+void ProjectManager::editProject_Description(string d) {
+    descriptions.push_back(this->descriptions);
+    this->descriptions = d;
+}
+
+
+void ProjectManager::editProjectName(string n) {
+    names.push_back(this->name);
+    this->name = n;
+}
+
+void ProjectManager::deleteProject(string name) {
+    for (auto p = projects.begin(); p != projects.end();) {
+        if ((*p)->getName() == name) {
+            delete (*p);
+            p = projects.erase(t);
+            return;
+        }
+        else {
+            ++p;
+        }
+    }
+}
+
+/* void ProjectManager::outputProjects() {
     for (int i = 0; i < projects.size(); ++i) {
         Project project = projects[i];
         cout << "Name: " << projects.getName() << endl;
@@ -34,87 +49,29 @@ void ProjectManager::outputProjects() {
         cout << "----------------------" << endl;
     }
 }
+*/ 
 
-void ProjectManager::setProjectName(string newName) {
-    //ProjectName = newName;
-}
-    if (projects.empty()) {
-        cout << "No projects to rename." << endl;
-    } 
-    else {
-        string new_name;
-        cout << "Enter the new name for project " << name << ": ";
-        cin >> new_name;
-        for (int i = 0; i < projects.size(); i++) {
-            if (projects[i].getName() == name) {
-                projects[i].setName(new_name);
-                cout << "Project renamed to " << new_name << "." << endl;
-                return;
-            }
-        }
-        cout << "Project " << name << " not found." << endl;
-    }
-}
+/*int ProjectManager::ProjectSize() {
 
-
-void ProjectManager::setDescription(string newDescription) {
-    description = newDescription;
-}
-    /*if (projects.empty()) {
-        cout << "No projects to set description." << endl;
-    } else {
-        string desc;
-        cout << "Enter the description for project " << name << ": ";
-        cin >> desc;
-        for (int i = 0; i < projects.size(); i++) {
-            if (projects[i].getName() == name) {
-                projects[i].setDescription(desc);
-                cout << "Project description set." << endl;
-                return;
-            }
-        }
-        cout << "Project " << name << " not found." << endl;
-    }
 }
 */
 
-bool ProjectManager::isComplete(string name) {
-    if (projects.isEmpty()) {
-        return false;
-    } 
-    else {
-        for (int i = 0; i < projects.size(); i++) {
-            if (projects[i].getName() == name) {
-                return projects[i].isComplete();
-            }
-            else {
-                cout << "Project not found" <<endl;
-                return false;
-            }
+Project* ProjectManager::getProject(string ProjectToFind) {
+    bool foundName = false;
+    Project* tmp = nullptr;
+
+    for (int i = 0; i < projects.size(); ++i) {
+        if (projects[i]->getName() == ProjectToFind) {
+            tmp = projects[i];
+            foundName = true;
+            break;
         }
     }
+   
+   return tmp;
 }
-
-bool ProjectManager::isEmpty() {
-    if(projects[]=0){
-        cout<<"No Projects" <<endl;
-        return true;
-    }
-    else{ return false;}
-}
-
-Project ProjectManager::getProject(string name) {
-    for (int i = 0; i < projects.size(); i++) {
-        if (projects[i].getProjectName() == projectName) {
-            return projects[i];
-        }
-    }
-    cout << "Project " << projectName << " not found." << endl;
-    return projects[i];
-}
-        
            
-void ProjectManager::addProject() {
+/*void ProjectManager::addProject(string projectName, string description) {
     string projectName, description;
     cout << "Enter project name: ";
     cin >> projectName;
@@ -125,4 +82,14 @@ void ProjectManager::addProject() {
     empty = false;
     cout << "Project " << projectName << " added." << endl;
 }
+*/
             
+bool ProjectManager::doesProjectExist(string findProjectName) {
+    bool isTrue = false;
+    for (int i = 0; i < projects.size(); ++i) {
+        if(projects[i]->name == findProjectName) {
+            isTrue = true;
+        }
+    }
+    return isTrue;
+}            

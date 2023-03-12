@@ -8,18 +8,20 @@ using namespace std;
 
 class ProjectManager {
     private:
-        vector<Project> projects;
-        bool empty;
+        vector<Project*> projects;
+        vector<string> names;
+        vector<string> descriptions;
     public:
         ProjectManager();
-        void deleteProject();
+        ~ProjectManager();
+        void editProject_Description(string);
+        void editProjectName(string);
+        void deleteProject(string);
         void outputProjects();
-        void setProjectName(string);
-        void setDescription(string);
-        bool isComplete(string);
-        bool isEmpty();
+        int ProjectSize();
         Project getProject(string);
-        void addProject();
+        void addProject(string, string);
+        bool doesProjectExist(string);
 };
 
 #endif
