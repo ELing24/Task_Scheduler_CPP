@@ -26,7 +26,10 @@ class Project{
         Task* getTask(string);
         string outputTasks(bool);
         void sortByPriority();
+        void sortByDeadline();
         bool doesTaskExist(string);
         int sizeOfTasksVector();
+        string getProjectName();
+        string getProjectDescription();
 };
 #endif

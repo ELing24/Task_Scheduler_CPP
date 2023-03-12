@@ -18,7 +18,7 @@ void Project::addTask(string n, string d, int dead, int p, bool status)
 
 }
 int Project::completedTasks()
-{
+{g
     int cnt = 0;
     for(int i = 0; i < tasks.size(); ++i)
     {
@@ -132,5 +132,13 @@ bool Project::doesTaskExist(string findTaskName)
 }
 int Project::sizeOfTasksVector()
 {
-    return tasks.size()
+    return tasks.size();
+}
+string Project::getProjectName()
+{
+    return this->name;
+}
+string Project::getProjectDescription()
+{
+    return this->description;
 }
