@@ -1,8 +1,11 @@
+#ifndef SUBTASK_HPP
+#define SUBTASK_HPP
+
 #include <vector>
 
 using namespace std;
 
-class Base{
+class Subtask{
     private:
         vector<string> names;
         vector<string> descriptions;
@@ -11,8 +14,8 @@ class Base{
         string description;
         bool status;
     public:
-        Base();
-        Base(string newName, string newDescription, bool newStatus);
+        Subtask();
+        Subtask(string newName, string newDescription, bool newStatus);
         void setName(string newName);
         string getName();
         void changeName(string newName);
@@ -26,3 +29,5 @@ class Base{
         void changeStatus(bool newStatus);
         void undoStatus();
 };
+
+#endif
