@@ -3,6 +3,7 @@
 #include "../header/Task.hpp"
 #include <vector>
 #include <iostream>
+#include <sstream>
 using namespace std;
 class Project{
     private:
@@ -14,7 +15,7 @@ class Project{
     public:
         Project(string, string);
         ~Project();
-        void addTask(string,string,string,int,bool);
+        void addTask(string,string,int,int,bool);
         int completedTasks();
         bool iscompleted(string);
         void editProjectName(string);
@@ -23,8 +24,12 @@ class Project{
         void undo_Description();
         void deleteTask(string);
         Task* getTask(string);
-        void outputTasks();
+        string outputTasks(bool);
         void sortByPriority();
+        void sortByDeadline();
         bool doesTaskExist(string);
+        int sizeOfTasksVector();
+        string getProjectName();
+        string getProjectDescription();
 };
 #endif

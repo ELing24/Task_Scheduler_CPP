@@ -11,14 +11,14 @@ Project::~Project()
         delete tasks[i];
     }
 }
-void Project::addTask(string n, string d, Deadline dead, int p, bool status)
+void Project::addTask(string n, string d, int dead, int p, bool status)
 {
     Task *tmp = new Task(n, d, dead, p, status);
     tasks.push_back(tmp);
-    sortByPriority();
+
 }
 int Project::completedTasks()
-{
+{g
     int cnt = 0;
     for(int i = 0; i < tasks.size(); ++i)
     {
@@ -68,30 +68,39 @@ Task* Project::getTask(string TaskToFind)
         }
     }
    
-   if (tmp == nullptr)
-   {
-       cout << "Task not found." << endl;
-   }
+
    return tmp;
 }
-
+void Project::sortByDeadline() {
+    sort(tasks.begin(), tasks.end(), [](Task* t1, Task* t2) {
+        return t1->getDeadline() < t2->getDeadline();
+    });
+}
 void Project::sortByPriority() {
     sort(tasks.begin(), tasks.end(), [](Task* t1, Task* t2) {
         return t1->getPriority() < t2->getPriority();
     });
 }
-void Project::outputTasks() {
-    sortByPriority();
-
+string Project::outputTasks(bool optionForOutputting) {
+    if(optionForOutputting == true)
+    {
+        sortByDeadline();
+    }
+    else
+    {
+        sortByPriority();
+    }
+    stringstream os;
     for (int i = 0; i < tasks.size(); ++i) {
         Task* task = tasks[i];
-        cout << "Name: " << task->getName() << endl;
-        cout << "Description: " << task->getDescriptions() << endl;
-        cout << "Deadline: " << task->getDeadline() << endl;
-        cout << "Priority: " << task->getPriority() << endl;
-        cout << "Status: " << (task->getStatus() ? "Complete" : "Incomplete") << endl;
-        cout << "----------------------" << endl;
+        os << "Name: " << task->getName() << endl;
+        os << "Description: " << task->getDescriptions() << endl;
+        os << "Deadline: " << task->getDeadline() << endl;
+        os << "Priority: " << task->getPriority() << endl;
+        os << "Status: " << (task->getStatus() ? "Complete" : "Incomplete") << endl;
+        os << "----------------------" << endl;
     }
+    return os.str();
 }
 void Project::deleteTask(string name)
 {
@@ -120,4 +129,16 @@ bool Project::doesTaskExist(string findTaskName)
         }
     }
     return isTrue;
+}
+int Project::sizeOfTasksVector()
+{
+    return tasks.size();
+}
+string Project::getProjectName()
+{
+    return this->name;
+}
+string Project::getProjectDescription()
+{
+    return this->description;
 }
