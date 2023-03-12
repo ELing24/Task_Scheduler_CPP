@@ -47,4 +47,4 @@ TEST(SubTaskTests, ChangeStatus) {
     EXPECT_EQ(subtask.getStatus(), false);
     subtask.undoStatus();
     EXPECT_EQ(subtask.getStatus(), true);
-}
+
