@@ -9,13 +9,9 @@ using namespace std;
 class ProjectManager {
     private:
         vector<Project*> projects;
-        vector<string> names;
-        vector<string> descriptions;
     public:
         ProjectManager();
         ~ProjectManager();
-        void editProject_Description(string);
-        void editProjectName(string);
         void deleteProject(string);
         void outputProjects();
         int ProjectSize();
