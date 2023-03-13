@@ -2,29 +2,33 @@
 #define TASK_HPP
 #include <vector>
 #include <string>
+#include <sstream>
+#include "../header/Subtask.hpp"
 
 
-class Task : public Base{
+class Task : public Subtask{
     private:
-        vector<subtask> subs;
+        vector<subtask*> subs;
         int priority;
-        string deadline;
+        int date;
         vector<int> priority;
-        vecctor<string> deadline;
     public:
-        void Task(string, string, string, int, bool);
+        Task();
+        Task(string, string, int, int, bool);
+        ~Task();
         void addSubtask(string, string, bool);
         void undoDeadline();
         void undoPriority();
-        void setDeadline(string);
+        void setDeadline(int);
         void setPriority(int);
-        string getDeadline();
-        int getpriority();
+        int getDeadline();
+        int getPriority();
         void changeDeadline(string);
         void changePriority(int);
         subtask getSubtask(string);
         void outputsubs();
         void deleteSubtask(string);
+        bool doesSubtaskExist(string);
 };
 
 #endif
