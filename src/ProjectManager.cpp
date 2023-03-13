@@ -35,7 +35,7 @@ string ProjectManager::outputProjects(){
     return os.str();
 }
 
-int ProjectManager:: ProjectSize(){
+int ProjectManager::ProjectSize(){
     return projects.size();
 }
 
