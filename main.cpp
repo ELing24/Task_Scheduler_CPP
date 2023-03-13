@@ -171,6 +171,7 @@ int main()
                             optionsForProjectNameOrDescription = toupper(optionsForProjectNameOrDescription);
                             if(optionsForProjectNameOrDescription == 'N')
                             {
+                                cout << "Current: " << projectToEdit->getProjectName() << endl;
                                 string newProjectName = "0";
                                 cout << "Enter the new name you want for this project:" << endl;
                                 cin >> newProjectName;
@@ -179,7 +180,9 @@ int main()
                             }
                             else if(optionsForProjectNameOrDescription == 'D')
                             {
+                                cout << "Current: " << projectToEdit->getProjectDescription() << endl;
                                 string newProjectDescription = "0";
+                                cin.ignore();
                                 cout << "Enter the new description you want for this project:" << endl;
                                 getline(cin, newProjectDescription);
                                 projectToEdit->editProject_Description(newProjectDescription);
@@ -310,205 +313,249 @@ int main()
                     }
                     else if(optionsForProject == 'T')
                     {
-                        Task* taskForUserToEdit = nullptr;
-                        cout << projectToEdit->outputTasks(true) << endl;
-                        while(true)
+                        if(projectToEdit->sizeOfTasksVector() > 0)
                         {
-                            string taskToEdit = "0";
-                            cout << "Enter the name of the Task you would like to edit:" << endl;
-                            cin >> taskToEdit;
-                            if(projectToEdit->doesTaskExist(taskToEdit) == true)
-                            {
-                                taskForUserToEdit = projectToEdit->getTask(taskToEdit);
-                                break;
-                            }
-                            else
-                            {
-                                cout << "Invalid Input, Try Again" << endl;
-                            }
-                        }
-                        char optionsForTasks = '0';
-                        while(optionsForTasks != 'B')
-                        {
-                            cout << "Enter B to go back to previous page:" << endl;
-                            cout << "Enter A to add subtask for this task:" << endl;
-                            cout << "Enter E to edit a feature of the Task:" << endl;
-                            cout << "Enter S to edit a feature of the subtask:" << endl;
-                            cout << "Enter U to undo changes for the task:" << endl;
-                            cout << "Enter C to undo changes for a subtask:" << endl;
-                            cout << "Enter D to delete a subtask:" << endl;
-                            cout << "Enter P to get the priority of this task:" << endl;
-                            cout << "Enter Z to get the deadline of this task:" << endl;
-                            cout << "Enter O to output all the subtasks in this task:" <<endl;
-                            cin >> optionsForTasks;
-                            char checkIfUserIntentionallyPressed = '0';
+                            Task* taskForUserToEdit = nullptr;
+                            cout << projectToEdit->outputTasks(true) << endl;
                             while(true)
                             {
-                                cout << "Are you sure that you want to enter " << optionsForTasks << "?" << endl;
-                                cout << "Enter Y to continue or N to cancel:" << endl;
-                                cin >> checkIfUserIntentionallyPressed;
-                                if(toupper(checkIfUserIntentionallyPressed) == 'N' || toupper(checkIfUserIntentionallyPressed) == 'n')
+                                string taskToEdit = "0";
+                                cout << "Enter the name of the Task you would like to edit:" << endl;
+                                cin >> taskToEdit;
+                                if(projectToEdit->doesTaskExist(taskToEdit) == true)
                                 {
-                                    optionsForTasks == '0';
-                                    break;
-                                }
-                                else if(toupper(checkIfUserIntentionallyPressed) == 'y' || toupper(checkIfUserIntentionallyPressed) == 'Y')
-                                {
+                                    taskForUserToEdit = projectToEdit->getTask(taskToEdit);
                                     break;
                                 }
                                 else
                                 {
-                                    cout << "Invalid Option, Try Again" << endl;
+                                    cout << "Invalid Input, Try Again" << endl;
                                 }
                             }
-                            optionsForTasks = toupper(optionsForTasks);
-                            if(optionsForTasks == 'E')
+                            char optionsForTasks = '0';
+                            while(optionsForTasks != 'B')
                             {
-                                editTask(taskForUserToEdit->getName(), taskForUserToEdit);
-                            }
-                            else if(optionsForTasks == 'S')
-                            {
-                                if(taskForUserToEdit->subtaskNumber() > 0)
+                                cout << "Enter B to go back to previous page:" << endl;
+                                cout << "Enter A to add subtask for this task:" << endl;
+                                cout << "Enter E to edit a feature of the Task:" << endl;
+                                cout << "Enter S to edit a feature of the subtask:" << endl;
+                                cout << "Enter U to undo changes for the task:" << endl;
+                                cout << "Enter C to undo changes for a subtask:" << endl;
+                                cout << "Enter D to delete a subtask:" << endl;
+                                cout << "Enter P to get the priority of this task:" << endl;
+                                cout << "Enter Z to get the deadline of this task:" << endl;
+                                cout << "Enter O to output all the subtasks in this task:" <<endl;
+                                cin >> optionsForTasks;
+                                char checkIfUserIntentionallyPressed = '0';
+                                while(true)
                                 {
-                                    cout << taskForUserToEdit->outputsubs() << endl;
-                                    string findSubtask = "0";
-                                    while(true)
+                                    cout << "Are you sure that you want to enter " << optionsForTasks << "?" << endl;
+                                    cout << "Enter Y to continue or N to cancel:" << endl;
+                                    cin >> checkIfUserIntentionallyPressed;
+                                    if(toupper(checkIfUserIntentionallyPressed) == 'N' || toupper(checkIfUserIntentionallyPressed) == 'n')
                                     {
-                                        findSubtask = "0";
-                                        cout << "Enter the name of the subtask you want to edit:" << endl;
-                                        cin >> findSubtask;
-                                        if(taskForUserToEdit->doesSubtaskExist(findSubtask)==true)
+                                        optionsForTasks == '0';
+                                        break;
+                                    }
+                                    else if(toupper(checkIfUserIntentionallyPressed) == 'y' || toupper(checkIfUserIntentionallyPressed) == 'Y')
+                                    {
+                                        break;
+                                    }
+                                    else
+                                    {
+                                        cout << "Invalid Option, Try Again" << endl;
+                                    }
+                                }
+                                optionsForTasks = toupper(optionsForTasks);
+                                if(optionsForTasks == 'E')
+                                {
+                                    editTask(taskForUserToEdit->getName(), taskForUserToEdit);
+                                }
+                                else if(optionsForTasks == 'U')
+                                {
+                                    char optionsForUndoTask = '0';
+                                    cout << "Enter N to undo name, D to undo description, S for status of the subtask, D to undo deadline, or P to undo priority:" << endl;
+                                    optionsForUndoTask = toupper(optionsForUndoTask);
+                                    if(optionsForUndoTask == 'N')
+                                    {
+                                        taskForUserToEdit->undoName();
+                                        cout << "Successfully Undo Task name" << endl;
+                                    }
+                                    else if(optionsForUndoTask == 'D')
+                                    {
+                                        taskForUserToEdit->undoDescription();
+                                        cout << "Successfully Undo Task description" << endl;
+                                        break;
+                                    }
+                                    else if(optionsForUndoTask == 'S')
+                                    {
+                                        taskForUserToEdit->undoStatus();
+                                        cout << "Successfully Undo Task status" << endl;
+                                        break;
+                                    }
+                                    else if(optionsForUndoTask == 'D')
+                                    {
+                                        taskForUserToEdit->undoDeadline();
+                                        cout << "Successfully Undo Task deadline" << endl;
+                                        break;
+                                    }
+                                    else if(optionsForUndoTask == 'P')
+                                    {
+                                        taskForUserToEdit->undoPriority();
+                                        cout << "Successfully Undo Task Priority" << endl;
+                                        break;
+                                    }
+                                    else
+                                    {
+                                        cout << "Invalid Option, Try Again" << endl;
+                                    }
+                                }
+                                else if(optionsForTasks == 'S')
+                                {
+                                    if(taskForUserToEdit->subtaskNumber() > 0)
+                                    {
+                                        cout << taskForUserToEdit->outputsubs() << endl;
+                                        string findSubtask = "0";
+                                        while(true)
                                         {
-                                            break;
-                                        }
-                                        else
-                                        {
-                                            cout << "Incorrect Option, Try Again:" << endl;
-                                        }
+                                            findSubtask = "0";
+                                            cout << "Enter the name of the subtask you want to edit:" << endl;
+                                            cin >> findSubtask;
+                                            if(taskForUserToEdit->doesSubtaskExist(findSubtask)==true)
+                                            {
+                                                break;
+                                            }
+                                            else
+                                            {
+                                                cout << "Incorrect Option, Try Again:" << endl;
+                                            }
 
+                                        }
+                                        editSubtask(findSubtask, taskForUserToEdit->getName(), taskForUserToEdit);
                                     }
-                                    editSubtask(findSubtask, taskForUserToEdit->getName(), taskForUserToEdit);
-                                }
-                                else
-                                {
-                                    cout << "You have no subtasks in this inventory" << endl;
-                                }
-                            }
-                            else if(optionsForTasks == 'A')
-                            {
-                                string newNameForSubtask = "";
-                                string newDescriptionForSubtask = "";
-                                bool newStatusForSubtask = false;
-                                cout << "Enter the name for this subtask:" << endl;
-                                cin >> newNameForSubtask;
-                                cout << "Enter the description for this subtask:" << endl;
-                                cin.ignore();
-                                getline(cin, newDescriptionForSubtask);
-                                taskForUserToEdit->addSubtask(newNameForSubtask, newDescriptionForSubtask, newStatusForSubtask);
-                            }
-                            else if(optionsForTasks == 'C')
-                            {
-                                if(taskForUserToEdit->subtaskNumber() > 0)
-                                {
-                                    string findSubtask = "0";
-                                    cout << taskForUserToEdit->outputsubs() << endl;
-                                    while(true)
+                                    else
                                     {
-                                        findSubtask = "0";
-                                        cout << "Enter the name of the subtask you want to undo:" << endl;
-                                        cin >> findSubtask;
-                                        if(taskForUserToEdit->doesSubtaskExist(findSubtask)==true)
+                                        cout << "You have no subtasks in this inventory" << endl;
+                                    }
+                                }
+                                else if(optionsForTasks == 'A')
+                                {
+                                    string newNameForSubtask = "";
+                                    string newDescriptionForSubtask = "";
+                                    bool newStatusForSubtask = false;
+                                    cout << "Enter the name for this subtask:" << endl;
+                                    cin >> newNameForSubtask;
+                                    cout << "Enter the description for this subtask:" << endl;
+                                    cin.ignore();
+                                    getline(cin, newDescriptionForSubtask);
+                                    taskForUserToEdit->addSubtask(newNameForSubtask, newDescriptionForSubtask, newStatusForSubtask);
+                                }
+                                else if(optionsForTasks == 'C')
+                                {
+                                    if(taskForUserToEdit->subtaskNumber() > 0)
+                                    {
+                                        string findSubtask = "0";
+                                        cout << taskForUserToEdit->outputsubs() << endl;
+                                        while(true)
                                         {
-                                            break;
-                                        }
-                                        else
-                                        {
-                                            cout << "Incorrect Option, Try Again:" << endl;
-                                        }
+                                            findSubtask = "0";
+                                            cout << "Enter the name of the subtask you want to undo:" << endl;
+                                            cin >> findSubtask;
+                                            if(taskForUserToEdit->doesSubtaskExist(findSubtask)==true)
+                                            {
+                                                break;
+                                            }
+                                            else
+                                            {
+                                                cout << "Incorrect Option, Try Again:" << endl;
+                                            }
 
+                                        }
+                                        Subtask* subtaskForUserToEdit = taskForUserToEdit->getSubtask(findSubtask);
+                                        while(true)
+                                        {
+                                            char optionsForUndoSubtask = '0';
+                                            cout << "Enter N to undo name, D to undo description, or S for status of the subtask:" << endl;
+                                            cin >> optionsForUndoSubtask;
+                                            optionsForUndoSubtask = toupper(optionsForUndoSubtask);
+                                            if(optionsForUndoSubtask == 'N')
+                                            {
+                                                subtaskForUserToEdit->undoName();
+                                                cout << "Successfully Undo Subtask Name" << endl;
+                                                break;
+                                            }
+                                            else if(optionsForUndoSubtask == 'D')
+                                            {
+                                                subtaskForUserToEdit->undoDescription();
+                                                cout << "Successfully Undo Subtask description" << endl;
+                                                break;
+                                            }
+                                            else if(optionsForUndoSubtask == 'S')
+                                            {
+                                                subtaskForUserToEdit->undoStatus();
+                                                cout << "Successfully Undo Subtask Status" << endl;
+                                                break;
+                                            }
+                                            else
+                                            {
+                                                cout << "Invalid Option, Try Again" << endl;
+                                            }
+                                        }
                                     }
-                                    Subtask* subtaskForUserToEdit = taskForUserToEdit->getSubtask(findSubtask);
-                                    while(true)
+                                    else
                                     {
-                                        char optionsForUndoSubtask = '0';
-                                        cout << "Enter N to undo name, D to undo description, or S for status of the subtask:" << endl;
-                                        cin >> optionsForUndoSubtask;
-                                        optionsForUndoSubtask = toupper(optionsForUndoSubtask);
-                                        if(optionsForUndoSubtask == 'N')
-                                        {
-                                            subtaskForUserToEdit->undoName();
-                                            cout << "Successfully Undo Subtask Name" << endl;
-                                            break;
-                                        }
-                                        else if(optionsForUndoSubtask == 'D')
-                                        {
-                                            subtaskForUserToEdit->undoDescription();
-                                            cout << "Successfully Undo Subtask Name" << endl;
-                                            break;
-                                        }
-                                        else if(optionsForUndoSubtask == 'S')
-                                        {
-                                            subtaskForUserToEdit->undoStatus();
-                                            cout << "Successfully Undo Subtask Status" << endl;
-                                            break;
-                                        }
-                                        else
-                                        {
-                                            cout << "Invalid Option, Try Again" << endl;
-                                        }
+                                        cout << "You have no subtasks in this inventory" << endl;
                                     }
                                 }
-                                else
+                                else if(optionsForTasks == 'D')
                                 {
-                                    cout << "You have no subtasks in this inventory" << endl;
-                                }
-                            }
-                            else if(optionsForTasks == 'D')
-                            {
-                                if(taskForUserToEdit->subtaskNumber() > 0)
-                                {
-                                    string findSubtask = "0";
-                                    while(true)
+                                    if(taskForUserToEdit->subtaskNumber() > 0)
                                     {
-                                        findSubtask = "0";
-                                        cout << "Enter the name of the subtask you want to delete:" << endl;
-                                        cin >> findSubtask;
-                                        if(taskForUserToEdit->doesSubtaskExist(findSubtask)==true)
+                                        string findSubtask = "0";
+                                        while(true)
                                         {
-                                            break;
-                                        }
-                                        else
-                                        {
-                                            cout << "Incorrect Option, Try Again" << endl;
-                                        }
+                                            findSubtask = "0";
+                                            cout << "Enter the name of the subtask you want to delete:" << endl;
+                                            cin >> findSubtask;
+                                            if(taskForUserToEdit->doesSubtaskExist(findSubtask)==true)
+                                            {
+                                                break;
+                                            }
+                                            else
+                                            {
+                                                cout << "Incorrect Option, Try Again" << endl;
+                                            }
 
+                                        }
+                                        taskForUserToEdit->deleteSubtask(findSubtask);
                                     }
-                                    taskForUserToEdit->deleteSubtask(findSubtask);
+                                    else
+                                    {
+                                        cout << "You have zero subtasks in this inventory" << endl;
+                                    }
                                 }
-                                else
+                                else if(optionsForTasks == 'P')
                                 {
-                                    cout << "You have zero subtasks in this inventory" << endl;
+                                    cout << "The priority of this task is " << taskForUserToEdit->getPriority() << endl;
                                 }
-                            }
-                            else if(optionsForTasks == 'P')
-                            {
-                                cout << "The priority of this task is " << taskForUserToEdit->getPriority() << endl;
-                            }
-                            else if(optionsForTasks == 'O')
-                            {
-                                if(taskForUserToEdit->subtaskNumber() > 0)
+                                else if(optionsForTasks == 'O')
                                 {
-                                    cout << taskForUserToEdit->outputsubs() << endl;
+                                    if(taskForUserToEdit->subtaskNumber() > 0)
+                                    {
+                                        cout << taskForUserToEdit->outputsubs() << endl;
+                                    }
+                                    else
+                                    {
+                                        cout << "You have no subtasks in this inventory" << endl;
+                                    }
                                 }
-                                else
-                                {
-                                    cout << "You have no subtasks in this inventory" << endl;
-                                }
+                                
                             }
-                            
                         }
-                        
-
+                        else
+                        {
+                            cout << "You have no tasks in this inventory" << endl;
+                        }
                     }
                     else if(optionsForProject == 'S')
                     {
@@ -558,6 +605,7 @@ void editTask(string nameOfTask, Task* taskForUserToEdit){
     {
         if(whichToChange == "name")
         {
+            cout << "Current: " << tmp->getName() << endl;
             string NewName;
             cout << "Enter the name you want to change: " << endl;
             cin >> NewName;
@@ -566,7 +614,9 @@ void editTask(string nameOfTask, Task* taskForUserToEdit){
         }
         else if(whichToChange == "description")
         {
+            cout << "Current: " << tmp->getDescription() << endl;
             string newDescription;
+            cin.ignore();
             cout << "Enter the new description you want to change: " <<endl;
             getline(cin, newDescription);
             tmp->changeDescription(newDescription);
@@ -579,6 +629,7 @@ void editTask(string nameOfTask, Task* taskForUserToEdit){
             while(correctDeadlineInput == false)
             {   
                 bool isValidInputForDeadline = true;
+                cout << "Current: " << tmp->getDeadline() << endl;
                 cout << "Enter the new deadline you want to change: FORMAT(YYYYMMDD):" << endl;
                 cout << "EX: 20220122 = January 21st, 2022:" << endl;
                 cin >> newDeadline;
@@ -605,8 +656,16 @@ void editTask(string nameOfTask, Task* taskForUserToEdit){
         {
             bool status;
             string option;
-            cout << "Enter one if you want to make the status of task " <<  tmp->getName()
-            << " complete or zero if status is uncomplete: " << endl;
+            if(tmp->getStatus() == true)
+            {
+                cout << "Current: Complete" << endl;
+            }
+            else
+            {
+                cout << "Current: Incomplete" << endl;
+            }
+            cout << "Enter 1 if you want to make the status of task " <<  tmp->getName()
+            << " complete or 0 if status is uncomplete: " << endl;
             cin >> option;
             while(true)
             {
@@ -634,6 +693,7 @@ void editTask(string nameOfTask, Task* taskForUserToEdit){
             while(correctPriorityInput == false)
             {
                 bool isvalidInputForPriority = true;
+                cout << "Current: " << tmp->getPriority() << endl;
                 cout << "Enter the new priority of this task in digits:" << endl;
                 cin >> newPriority;
                 for(int i = 0; i < newPriority.size(); ++i)
@@ -675,6 +735,7 @@ void editSubtask(string nameOfSubtask, string nameOfTaskForEditSubtask, Task* ta
     {
         if(whichToChange == "name")
         {
+            cout << "Current: " << Sub->getName() << endl;
             string NewName;
             cout << "Enter the name you want to change: " << endl;
             cin >> NewName;
@@ -683,7 +744,9 @@ void editSubtask(string nameOfSubtask, string nameOfTaskForEditSubtask, Task* ta
         }
         else if(whichToChange == "description")
         {
+            cout << "Current: " << Sub->getDescription() << endl;
             string newDescription;
+            cin.ignore();
             cout << "Enter the new description you want to change: " <<endl;
             getline(cin, newDescription);
             Sub->changeDescription(newDescription);
@@ -693,7 +756,15 @@ void editSubtask(string nameOfSubtask, string nameOfTaskForEditSubtask, Task* ta
         {
             bool status;
             string option;
-            cout << "Enter one if you want to make the status of subtask " << Sub->getName() << " complete or zero if status is uncomplete: " << endl;
+            if(Sub->getStatus() == true)
+            {
+                cout << "Current: Complete" << endl;
+            }
+            else
+            {
+                cout << "Current: Incomplete" << endl;
+            }
+            cout << "Enter 1 if you want to make the status of subtask " << Sub->getName() << " complete or 0 if status is uncomplete: " << endl;
             cin >> option;
             while(true)
             {
