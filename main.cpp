@@ -317,7 +317,7 @@ int main()
                             string taskToEdit = "0";
                             cout << "Enter the name of the Task you would like to edit:" << endl;
                             cin >> taskToEdit;
-                            if(mainProgram->doesProjectExist(taskToEdit) == true)
+                            if(projectToEdit->doesTaskExist(taskToEdit) == true)
                             {
                                 taskForUserToEdit = projectToEdit->getTask(taskToEdit);
                                 break;
