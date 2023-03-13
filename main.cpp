@@ -136,6 +136,7 @@ int main()
                     cout << "Enter E to undo an edit for the project's name or description:" << endl;
                     cout << "Enter B to go back to the Project Menu:" << endl;
                     cout << "Enter O to output all task in this project:" << endl;
+                    cout << "Enter D to delete a task in this project" << endl;
                     cout << "Enter A to add a task in this project:" << endl;
                     cout << "Enter T to edit/inspect a task in this project:" << endl;
                     cout << "Enter S to get the amount of complete task for this project:" << endl;
@@ -193,6 +194,24 @@ int main()
                                 cout << "Invalid Option, Try Again" << endl;
                             }
                         }
+                    }
+                    else if(optionsForProject == 'D')
+                    {
+                        string findTask = "0";
+                        while(true)
+                        {
+                            cout << "Enter the name of the task you want to delete:" << endl;
+                            cin >> findTask;
+                            if(projectToEdit->doesTaskExist(findTask) == true)
+                            {
+                                break;
+                            }
+                            else
+                            {
+                                cout << "Incorrect Option, Try Again" << endl;
+                            }
+                        }
+                        projectToEdit->deleteTask(findTask);
                     }
                     else if(optionsForProject == 'E')
                     {
@@ -514,6 +533,7 @@ int main()
                                         string findSubtask = "0";
                                         while(true)
                                         {
+                                            cout << taskForUserToEdit->outputsubs() << endl;
                                             findSubtask = "0";
                                             cout << "Enter the name of the subtask you want to delete:" << endl;
                                             cin >> findSubtask;
