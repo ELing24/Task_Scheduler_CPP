@@ -368,24 +368,31 @@ int main()
                             }
                             else if(optionsForTasks == 'S')
                             {
-                                cout << taskForUserToEdit->outputsubs() << endl;
-                                string findSubtask = "0";
-                                while(true)
+                                if(taskForUserToEdit->subtaskNumber() > 0)
                                 {
-                                    findSubtask = "0";
-                                    cout << "Enter the name of the subtask you want to edit:" << endl;
-                                    cin >> findSubtask;
-                                    if(taskForUserToEdit->doesSubtaskExist(findSubtask)==true)
+                                    cout << taskForUserToEdit->outputsubs() << endl;
+                                    string findSubtask = "0";
+                                    while(true)
                                     {
-                                        break;
-                                    }
-                                    else
-                                    {
-                                        cout << "Incorrect Option, Try Again:" << endl;
-                                    }
+                                        findSubtask = "0";
+                                        cout << "Enter the name of the subtask you want to edit:" << endl;
+                                        cin >> findSubtask;
+                                        if(taskForUserToEdit->doesSubtaskExist(findSubtask)==true)
+                                        {
+                                            break;
+                                        }
+                                        else
+                                        {
+                                            cout << "Incorrect Option, Try Again:" << endl;
+                                        }
 
+                                    }
+                                    editSubtask(findSubtask, taskForUserToEdit->getName(), taskForUserToEdit);
                                 }
-                                editSubtask(findSubtask, taskForUserToEdit->getName(), taskForUserToEdit);
+                                else
+                                {
+                                    cout << "You have no subtasks in this inventory" << endl;
+                                }
                             }
                             else if(optionsForTasks == 'A')
                             {
@@ -401,52 +408,59 @@ int main()
                             }
                             else if(optionsForTasks == 'C')
                             {
-                                string findSubtask = "0";
-                                cout << taskForUserToEdit->outputsubs() << endl;
-                                while(true)
+                                if(taskForUserToEdit->subtaskNumber() > 0)
                                 {
-                                    findSubtask = "0";
-                                    cout << "Enter the name of the subtask you want to undo:" << endl;
-                                    cin >> findSubtask;
-                                    if(taskForUserToEdit->doesSubtaskExist(findSubtask)==true)
+                                    string findSubtask = "0";
+                                    cout << taskForUserToEdit->outputsubs() << endl;
+                                    while(true)
                                     {
-                                        break;
-                                    }
-                                    else
-                                    {
-                                        cout << "Incorrect Option, Try Again:" << endl;
-                                    }
+                                        findSubtask = "0";
+                                        cout << "Enter the name of the subtask you want to undo:" << endl;
+                                        cin >> findSubtask;
+                                        if(taskForUserToEdit->doesSubtaskExist(findSubtask)==true)
+                                        {
+                                            break;
+                                        }
+                                        else
+                                        {
+                                            cout << "Incorrect Option, Try Again:" << endl;
+                                        }
 
+                                    }
+                                    Subtask* subtaskForUserToEdit = taskForUserToEdit->getSubtask(findSubtask);
+                                    while(true)
+                                    {
+                                        char optionsForUndoSubtask = '0';
+                                        cout << "Enter N to undo name, D to undo description, or S for status of the subtask:" << endl;
+                                        cin >> optionsForUndoSubtask;
+                                        optionsForUndoSubtask = toupper(optionsForUndoSubtask);
+                                        if(optionsForUndoSubtask == 'N')
+                                        {
+                                            subtaskForUserToEdit->undoName();
+                                            cout << "Successfully Undo Subtask Name" << endl;
+                                            break;
+                                        }
+                                        else if(optionsForUndoSubtask == 'D')
+                                        {
+                                            subtaskForUserToEdit->undoDescription();
+                                            cout << "Successfully Undo Subtask Name" << endl;
+                                            break;
+                                        }
+                                        else if(optionsForUndoSubtask == 'S')
+                                        {
+                                            subtaskForUserToEdit->undoStatus();
+                                            cout << "Successfully Undo Subtask Status" << endl;
+                                            break;
+                                        }
+                                        else
+                                        {
+                                            cout << "Invalid Option, Try Again" << endl;
+                                        }
+                                    }
                                 }
-                                Subtask* subtaskForUserToEdit = taskForUserToEdit->getSubtask(findSubtask);
-                                while(true)
+                                else
                                 {
-                                    char optionsForUndoSubtask = '0';
-                                    cout << "Enter N to undo name, D to undo description, or S for status of the subtask:" << endl;
-                                    cin >> optionsForUndoSubtask;
-                                    optionsForUndoSubtask = toupper(optionsForUndoSubtask);
-                                    if(optionsForUndoSubtask == 'N')
-                                    {
-                                        subtaskForUserToEdit->undoName();
-                                        cout << "Successfully Undo Subtask Name" << endl;
-                                        break;
-                                    }
-                                    else if(optionsForUndoSubtask == 'D')
-                                    {
-                                        subtaskForUserToEdit->undoDescription();
-                                        cout << "Successfully Undo Subtask Name" << endl;
-                                        break;
-                                    }
-                                    else if(optionsForUndoSubtask == 'S')
-                                    {
-                                        subtaskForUserToEdit->undoStatus();
-                                        cout << "Successfully Undo Subtask Status" << endl;
-                                        break;
-                                    }
-                                    else
-                                    {
-                                        cout << "Invalid Option, Try Again" << endl;
-                                    }
+                                    cout << "You have no subtasks in this inventory" << endl;
                                 }
                             }
                             else if(optionsForTasks == 'D')
