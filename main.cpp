@@ -200,6 +200,7 @@ int main()
                         string findTask = "0";
                         while(true)
                         {
+                            cout << projectToEdit->outputTasks(true) << endl;
                             cout << "Enter the name of the task you want to delete:" << endl;
                             cin >> findTask;
                             if(projectToEdit->doesTaskExist(findTask) == true)
