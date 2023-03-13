@@ -1,12 +1,13 @@
 #ifndef SUBTASK_HPP
 #define SUBTASK_HPP
-
+#include <iostream>
 #include <vector>
+#include <algorithm>
 
 using namespace std;
 
 class Subtask{
-    private:
+    protected:
         vector<string> names;
         vector<string> descriptions;
         vector<bool> statusList;

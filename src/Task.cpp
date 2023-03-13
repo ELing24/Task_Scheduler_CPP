@@ -24,17 +24,18 @@ int Task::getDeadline(){
     return date;
 }
 
-void Task::setDeadline(string deadline){
-    this->deadline = deadline;
+void Task::setDeadline(int deadline){
+    deadlines.push_back(this->date);
+    this->date = deadline;
 }
-void Task::changeDeadline(string deadline){
-    deadline.push_back(deadline);
-    this->deadline = deadline;
+void Task::changeDeadline(int deadline){
+    deadlines.push_back(date);
+    this->date = deadline;
 }
 void Task::undoDeadline(){
-    if(deadline.size() > 0){
-        deadline = deadline.back();
-        deadline.pop_back;
+    if(deadlines.size() > 0){
+        date = deadlines.back();
+        deadlines.pop_back();
     }
 }
 int Task::getPriority(){
@@ -42,18 +43,19 @@ int Task::getPriority(){
 }
 
 void Task::changePriority(int priority){
+    priorities.push_back(this->priority);
     this->priority = priority;
 }
 
 void Task::setPriority(int priority){
-    priority.push_back(priority);
+    priorities.push_back(priority);
     this->priority = priority;
 }
 
 void Task::undoPriority(){
-    if(priority.size() > 0){
-        priority = priority.back();
-        priority.pop_back;
+    if(priorities.size() > 0){
+        priority = priorities.back();
+        priorities.pop_back();
     }
 }
 
@@ -69,13 +71,13 @@ void Task::addSubtask(string name, string description, bool status){
     subs.push_back(tmp);
 }
 
-void Task::outputsubs(){
+string Task::outputsubs(){
     stringstream os;
-    for (int i = 0; i < subtask.size(); ++i)
+    for (int i = 0; i < subs.size(); ++i)
     {
         Subtask* sub = subs[i];
         os << "Name: " << sub->getName() << endl;
-        os << "Description: " << sub->getDescriptions() << endl;
+        os << "Description: " << sub->getDescription() << endl;
         os << "Status: " << (sub->getStatus() ? "Complete" : "Incomplete") << endl;
         os << "----------------------" << endl;
     }
@@ -83,7 +85,7 @@ void Task::outputsubs(){
 }
 
 void Task::deleteSubtask(string name){
-    for (auto s = subs.begin(); s != subs.end()){
+    for (auto s = subs.begin(); s != subs.end();){
         if((*s)->getName() == name){
             delete (*s);
             s = subs.erase(s);
@@ -98,10 +100,32 @@ void Task::deleteSubtask(string name){
 bool Task::doesSubtaskExist(string findSubName){
     bool isTrue = false;
     for (int i =0; i < subs.size(); ++i){
-        if(subs[i]->name == findSubName)
+        if(subs[i]->getName() == findSubName)
         {
             isTrue = true;
         }
     }
     return isTrue;
+}
+int Task::subtaskNumber()
+{
+    return subs.size();
+}
+Subtask* Task::getSubtask(string findSubtask)
+{
+    bool foundName = false;
+    Subtask* tmp = nullptr;
+
+        for (int i = 0; i < subs.size(); ++i)
+        {
+            if (subs[i]->getName() == findSubtask)
+            {
+                tmp = subs[i];
+                foundName = true;
+                break;
+            }
+        }
+   
+
+   return tmp;
 }

@@ -7,8 +7,8 @@
 #include <cctype>
 #include <string>
 using namespace std;
-void editTask(string);
-void editSubtask(string,string);
+void editTask(string, Task*);
+void editSubtask(string,string, Task*);
 
 int main()
 {
@@ -16,7 +16,6 @@ int main()
     char userOption = '0';
     while(toupper(userOption) != 'Q')
     {
-        system("CLS");
         cout << "Project Menu: " << endl;
         cout << "Enter O to output all projects:" << endl;
         cout << "Enter D to delete a project:" << endl;
@@ -25,18 +24,18 @@ int main()
         cout << "Enter E if you would like to edit/inspect a project:" << endl;
         cout << "Enter Q to quit program" << endl;
         cin >> userOption;
-        char checkIfUserIntentionallyPressed = "0";
+        char checkIfUserIntentionallyPressed ='0';
         while(true)
         {
             cout << "Are you sure that you want to enter " << userOption << "?" << endl;
             cout << "Enter Y to continue or N to cancel:" << endl;
             cin >> checkIfUserIntentionallyPressed;
-            if(toupper(checkIfUserIntentionallyPressed) == "N" || toupper(checkIfUserIntentionallyPressed) == "n")
+            if(toupper(checkIfUserIntentionallyPressed) == 'N' || toupper(checkIfUserIntentionallyPressed) == 'n')
             {
-                userOption == "0";
+                userOption == '0';
                 break;
             }
-            else if(toupper(checkIfUserIntentionallyPressed) == "Y" || toupper(checkIfUserIntentionallyPressed) == "y")
+            else if(toupper(checkIfUserIntentionallyPressed) == 'Y' || toupper(checkIfUserIntentionallyPressed) == 'y')
             {
                 break;
             }
@@ -49,7 +48,7 @@ int main()
         {
             if(mainProgram->ProjectSize() > 0)
             {
-                cout << mainProgram->outputProject() << endl;
+                cout << mainProgram->outputProjects() << endl;
             }
             else
             {
@@ -76,8 +75,8 @@ int main()
                         cin >> ProjectToDelete;
                     }
                 }
-                Project* tmp = mainProgram->getProject(ProjectToDelete);
-                mainProgram->deleteProject(tmp);
+
+                mainProgram->deleteProject(ProjectToDelete);
             }
             else
             {
@@ -101,6 +100,10 @@ int main()
         {
             cout << "You have " << mainProgram->ProjectSize() << " projects in your inventory" << endl;
         }
+        else if(toupper(userOption) == 'Q')
+        {
+            break;
+        }
         else if(toupper(userOption) == 'E')
         {
             Project* projectToEdit = nullptr;
@@ -123,7 +126,6 @@ int main()
             char optionsForProject = '0';
             while(toupper(optionsForProject) != 'B')
             {
-                system("CLS");
                 cout << "Enter P to edit the project's name or description:" << endl;
                 cout << "Enter E to undo an edit for the project's name or description:" << endl;
                 cout << "Enter B to go back to the Project Menu:" << endl;
@@ -132,18 +134,18 @@ int main()
                 cout << "Enter T to edit/inspect a task in this project:" << endl;
                 cout << "Enter S to get the amount of complete task for this project:" << endl;
                 cin >> optionsForProject;
-                char checkIfUserIntentionallyPressed = "0";
+                char checkIfUserIntentionallyPressed = '0';
                 while(true)
                 {
                     cout << "Are you sure that you want to enter " << optionsForProject << "?" << endl;
                     cout << "Enter Y to continue or N to cancel:" << endl;
                     cin >> checkIfUserIntentionallyPressed;
-                    if(toupper(checkIfUserIntentionallyPressed) == "N" || toupper(checkIfUserIntentionallyPressed) == "n")
+                    if(toupper(checkIfUserIntentionallyPressed) =='N' || toupper(checkIfUserIntentionallyPressed) == 'n')
                     {
-                        optionsForProject == "0";
+                        optionsForProject == '0';
                         break;
                     }
-                    else if(toupper(checkIfUserIntentionallyPressed) == "Y" || toupper(checkIfUserIntentionallyPressed) == "y")
+                    else if(toupper(checkIfUserIntentionallyPressed) == 'Y' || toupper(checkIfUserIntentionallyPressed) == 'y')
                     {
                         break;
                     }
@@ -246,8 +248,8 @@ int main()
                     string nameForNewTask = "0";
                     string descriptionForNewTask = "0";
                     bool statusForNewTask = false;
-                    string deadlineForNewTask = 0;
-                    string priorityForNewTask = 0;
+                    string deadlineForNewTask = "0";
+                    string priorityForNewTask = "0";
                     cout << "Enter a name for the new task:" << endl;
                     cin >> nameForNewTask;
                     cout << "Enter a description for the new task:" << endl;
@@ -303,13 +305,13 @@ int main()
                 else if(optionsForProject == 'T')
                 {
                     Task* taskForUserToEdit = nullptr;
-                    cout << projectToEdit->outputTasks() << endl;
+                    cout << projectToEdit->outputTasks(true) << endl;
                     while(true)
                     {
                         string taskToEdit = "0";
                         cout << "Enter the name of the Task you would like to edit:" << endl;
                         cin >> taskToEdit;
-                        if(mainProgram->doesTaskExist(taskToEdit) == true)
+                        if(mainProgram->doesProjectExist(taskToEdit) == true)
                         {
                             taskForUserToEdit = projectToEdit->getTask(taskToEdit);
                             break;
@@ -322,7 +324,6 @@ int main()
                     char optionsForTasks = '0';
                     while(optionsForTasks != 'B')
                     {
-                        system("CLS");
                         cout << "Enter B to go back to previous page:" << endl;
                         cout << "Enter A to add subtask for this task:" << endl;
                         cout << "Enter E to edit a feature of the Task:" << endl;
@@ -334,18 +335,18 @@ int main()
                         cout << "Enter Z to get the deadline of this task:" << endl;
                         cout << "Enter O to output all the subtasks in this task:" <<endl;
                         cin >> optionsForTasks;
-                        char checkIfUserIntentionallyPressed = "0";
+                        char checkIfUserIntentionallyPressed = '0';
                         while(true)
                         {
                             cout << "Are you sure that you want to enter " << optionsForTasks << "?" << endl;
                             cout << "Enter Y to continue or N to cancel:" << endl;
                             cin >> checkIfUserIntentionallyPressed;
-                            if(toupper(checkIfUserIntentionallyPressed) == "N" || toupper(checkIfUserIntentionallyPressed) == "n")
+                            if(toupper(checkIfUserIntentionallyPressed) == 'N' || toupper(checkIfUserIntentionallyPressed) == 'n')
                             {
-                                optionsForTasks == "0";
+                                optionsForTasks == '0';
                                 break;
                             }
-                            else if(toupper(checkIfUserIntentionallyPressed) == "y" || toupper(checkIfUserIntentionallyPressed) == "Y")
+                            else if(toupper(checkIfUserIntentionallyPressed) == 'y' || toupper(checkIfUserIntentionallyPressed) == 'Y')
                             {
                                 break;
                             }
@@ -357,7 +358,7 @@ int main()
                         optionsForTasks = toupper(optionsForTasks);
                         if(optionsForTasks == 'E')
                         {
-                            editTask(taskForUserToEdit->GetName());
+                            editTask(taskForUserToEdit->getName(), taskForUserToEdit);
                         }
                         else if(optionsForTasks == 'S')
                         {
@@ -378,7 +379,7 @@ int main()
                                 }
 
                             }
-                            editSubtask(findSubtask, taskForUserToEdit->GetName());
+                            editSubtask(findSubtask, taskForUserToEdit->getName(), taskForUserToEdit);
                         }
                         else if(optionsForTasks == 'A')
                         {
@@ -426,14 +427,14 @@ int main()
                                 }
                                 else if(optionsForUndoSubtask == 'D')
                                 {
-                                    subtaskForUserToEdit->undo_Description();
+                                    subtaskForUserToEdit->undoDescription();
                                     cout << "Successfully Undo Subtask Name" << endl;
                                     break;
                                 }
                                 else if(optionsForUndoSubtask == 'S')
                                 {
                                     subtaskForUserToEdit->undoStatus();
-                                    cout << "Successfully Undo Subtask Status" << end;
+                                    cout << "Successfully Undo Subtask Status" << endl;
                                     break;
                                 }
                                 else
@@ -471,11 +472,11 @@ int main()
                         }
                         else if(optionsForTasks == 'P')
                         {
-                            cout << "The priority of this task is " << taskForUserToEdit->getpriority() << endl;
+                            cout << "The priority of this task is " << taskForUserToEdit->getPriority() << endl;
                         }
                         else if(optionsForTasks == 'O')
                         {
-                            if(taskForUserToEdit_>subtaskNumber() > 0)
+                            if(taskForUserToEdit->subtaskNumber() > 0)
                             {
                                 cout << taskForUserToEdit->outputsubs() << endl;
                             }
@@ -496,12 +497,12 @@ int main()
                 else if(optionsForProject == 'Z')
                 {
                     string nameToGetDeadline = "";
-                    cout << projectToEdit->outputTasks() << endl;
+                    cout << projectToEdit->outputTasks(true) << endl;
                     while(true)
                     {
                         cout << "Enter the name of the name of the task you want the deadline for:" << endl;
                         cin >> nameToGetDeadline;
-                        if(doesTaskExist(nameToGetDeadline) == true)
+                        if(projectToEdit->doesTaskExist(nameToGetDeadline) == true)
                         {
                             Task* deadlineForUser = projectToEdit->getTask(nameToGetDeadline);
                             cout << "The deadline for this task is " << deadlineForUser->getDeadline() << endl;
@@ -524,8 +525,8 @@ int main()
     return 0;
 }
 
-void editTask(string nameOfTask){
-    Task* tmp = getTask(nameOfTask);
+void editTask(string nameOfTask, Task* taskForUserToEdit){
+    Task* tmp = taskForUserToEdit;
     string whichToChange = "";
     cout << "Enter 'name' to modify name, 'description' to modify description, 'deadline' to modify deadline, 'status' to modify status, or 'priority' to change priority:" << endl;
     cin >> whichToChange;
@@ -544,7 +545,7 @@ void editTask(string nameOfTask){
             string newDescription;
             cout << "Enter the new description you want to change: " <<endl;
             getline(cin, newDescription);
-            tmp->changeDescriptions(newDescription);
+            tmp->changeDescription(newDescription);
             break;
         }
         else if(whichToChange == "deadline")
@@ -580,7 +581,7 @@ void editTask(string nameOfTask){
         {
             bool status;
             string option;
-            cout << "Enter one if you want to make the status of task " <<  tmp->GetName()
+            cout << "Enter one if you want to make the status of task " <<  tmp->getName()
             << " complete or zero if status is uncomplete: " << endl;
             cin >> option;
             while(true)
@@ -640,10 +641,9 @@ void editTask(string nameOfTask){
     }
 }
 
-void editSubtask(string nameOfSubtask, string nameOfTaskForEditSubtask)
+void editSubtask(string nameOfSubtask, string nameOfTaskForEditSubtask, Task* taskForUserToEdit)
 {
-    Task* tmp = getTask(nameOfTaskForEditSubtask);
-    Subtask* Sub = tmp->getSubtask(nameOfSubtask);
+    Subtask* Sub = taskForUserToEdit->getSubtask(nameOfSubtask);
     string whichToChange = "";
     cout << "Enter 'name' to modify name, 'description' to modify description, or 'status' to modify status" << endl;
     cin >> whichToChange;
@@ -662,21 +662,20 @@ void editSubtask(string nameOfSubtask, string nameOfTaskForEditSubtask)
             string newDescription;
             cout << "Enter the new description you want to change: " <<endl;
             getline(cin, newDescription);
-            Sub->changeDescriptions(newDescription);
+            Sub->changeDescription(newDescription);
             break;
         }
         else if(whichToChange == "status")
         {
             bool status;
             string option;
-            cout << "Enter one if you want to make the status of task " <<  tmp->GetName()
-            << " complete or zero if status is uncomplete: " << endl;
+            cout << "Enter one if you want to make the status of subtask " << Sub->getName() << " complete or zero if status is uncomplete: " << endl;
             cin >> option;
             while(true)
             {
                 if(option == "1")
                 {
-                    tmp->changeStatus(true);
+                    Sub->changeStatus(true);
                     break;
                 }
                 else if(option == "0"){

@@ -8,10 +8,11 @@
 
 class Task : public Subtask{
     private:
-        vector<subtask*> subs;
+        vector<Subtask*> subs;
         int priority;
         int date;
-        vector<int> priority;
+        vector<int> deadlines;
+        vector<int> priorities;
     public:
         Task();
         Task(string, string, int, int, bool);
@@ -23,12 +24,13 @@ class Task : public Subtask{
         void setPriority(int);
         int getDeadline();
         int getPriority();
-        void changeDeadline(string);
+        void changeDeadline(int);
         void changePriority(int);
-        subtask getSubtask(string);
-        void outputsubs();
+        Subtask* getSubtask(string);
+        string outputsubs();
         void deleteSubtask(string);
         bool doesSubtaskExist(string);
+        int subtaskNumber();
 };
 
 #endif

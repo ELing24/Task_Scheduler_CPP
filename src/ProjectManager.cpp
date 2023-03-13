@@ -28,11 +28,11 @@ void ProjectManager::deleteProject(string ProjectToDelete){
 string ProjectManager::outputProjects(){
     stringstream os;
     for (int i = 0; i < projects.size(); ++i) {
-        ProjectManager* projectsToOutput = projects[i];
+        Project* projectsToOutput = projects[i];
         os << "Name: " << projectsToOutput->getProjectName() << endl;
         os << "Description: " << projectsToOutput->getProjectDescription() << endl;
     }
-    return os;
+    return os.str();
 }
 
 int ProjectManager:: ProjectSize(){
@@ -44,12 +44,12 @@ Project* ProjectManager::getProject(string ProjectToFind){
     Project* tmp = nullptr;
 
     for (int i = 0; i < projects.size(); ++i){
-        if (projects[i]->getName() == ProjectToFind){
+        if (projects[i]->getProjectName() == ProjectToFind){
             tmp = projects[i];
             foundName = true;
             break;
         }
-   
+    }
    return tmp;
 }
 
@@ -61,7 +61,7 @@ void ProjectManager::addProject(string projectName, string projectDescription){
 bool ProjectManager::doesProjectExist(string projectToFind){
     bool isTrue = false;
     for(int i = 0; i < projects.size(); ++i){
-        if (projects[i]->getName() == projectToFind){
+        if (projects[i]->getProjectName() == projectToFind){
             isTrue = true;
         }
     }

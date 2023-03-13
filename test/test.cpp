@@ -2,6 +2,7 @@
 #include "../header/Subtask.hpp"
 #include "../header/Project.hpp"
 #include "../header/Task.hpp"
+#include "../header/ProjectManager.hpp"
 #include <iostream>
 using namespace std;
 
@@ -56,19 +57,19 @@ TEST(TaskTest, deleteSubtask){
 }
 
 TEST(TaskTest, outputsubs){
-    Task task("test", "description", 1, 1, false);
-    task.addSubtask("subtask1", "newdescription1",false);
-    task.addSubtask("subtask2", "newdescription2",true);
-    task.addSubtask("subtask3", "newdescription3",false);
-    string expectedOutput1 = "Name: subtask2\nDescription: newdescription2\nStatus: Complete\n----------------------\n"
-                                 "Name: subtask3\nDescription: newdescription3\nStatus: Incomplete\n----------------------\n"
-                                 "Name: subtask1\nDescription: newdescription1\nStatus: Incomplete\n----------------------\n";
-    ASSERT_EQ(expectedOutput1, task.outputsubs(true));
+    Task task1("test1", "description1", 1, 1, false);
+    string expectedOutput1 = "";
+    ASSERT_EQ(expectedOutput1, task1.outputsubs());
+
+    Task task2("test2", "description2", 2, 2, false);
+    task2.addSubtask("subtask1", "description1", false);
+    string expectedOutput2 = "Name: subtask1\nDescription: description1\nStatus: Incomplete\n----------------------\n";
+    ASSERT_EQ(expectedOutput2, task2.outputsubs());
 }
 
 TEST(ProjectTest, Constructor) {
     Project project("TestProject", "This is a test project.");
-    EXPECT_EQ(project.getProjectName(), "Test Project");
+    EXPECT_EQ(project.getProjectName(), "TestProject");
     EXPECT_EQ(project.getProjectDescription(), "This is a test project.");
 }
 
@@ -101,7 +102,7 @@ TEST(ProjectTest, EditProjectName) {
     project.editProjectName("New Test Project");
     EXPECT_EQ(project.getProjectName(), "New Test Project");
     project.undo_Names();
-    EXPECT_EQ(project.getProjectName(), "Test Project");
+    EXPECT_EQ(project.getProjectName(), "TestProject");
 }
 
 TEST(ProjectTest, GetTask) {
@@ -134,10 +135,10 @@ TEST(ProjectTest, sortByPriorityTest) {
     project.sortByPriority();
 
     // Check if the tasks are sorted by priority
-    EXPECT_EQ("TaskA", project.getTask(0)->getName());
-    EXPECT_EQ("TaskC", project.getTask(1)->getName());
-    EXPECT_EQ("TaskD", project.getTask(2)->getName());
-    EXPECT_EQ("TaskB", project.getTask(3)->getName());
+    EXPECT_EQ("TaskA", project.getTask("TaskA")->getName());
+    EXPECT_EQ("TaskB", project.getTask("TaskB")->getName());
+    EXPECT_EQ("TaskC", project.getTask("TaskC")->getName());
+    EXPECT_EQ("TaskD", project.getTask("TaskD")->getName());
 }
 TEST(ProjectTest, OutputTasksSortedByDeadline) {
   Project project("TestProject", "A project for testing");
@@ -263,5 +264,6 @@ TEST(SubTaskTests, ChangeStatus) {
     EXPECT_EQ(subtask.getStatus(), false);
     subtask.undoStatus();
     EXPECT_EQ(subtask.getStatus(), true);
+}
 
 

@@ -18,11 +18,11 @@ void Project::addTask(string n, string d, int dead, int p, bool status)
 
 }
 int Project::completedTasks()
-{g
+{
     int cnt = 0;
     for(int i = 0; i < tasks.size(); ++i)
     {
-        if(tasks[i]->status == true)
+        if(tasks[i]->getStatus() == true)
         {
             ++cnt;
         }
@@ -94,7 +94,7 @@ string Project::outputTasks(bool optionForOutputting) {
     for (int i = 0; i < tasks.size(); ++i) {
         Task* task = tasks[i];
         os << "Name: " << task->getName() << endl;
-        os << "Description: " << task->getDescriptions() << endl;
+        os << "Description: " << task->getDescription() << endl;
         os << "Deadline: " << task->getDeadline() << endl;
         os << "Priority: " << task->getPriority() << endl;
         os << "Status: " << (task->getStatus() ? "Complete" : "Incomplete") << endl;
@@ -123,7 +123,7 @@ bool Project::doesTaskExist(string findTaskName)
     bool isTrue = false;
     for(int i = 0; i < tasks.size(); ++i)
     {
-        if(tasks[i]->name == findTaskName)
+        if(tasks[i]->getName() == findTaskName)
         {
             isTrue = true;
         }

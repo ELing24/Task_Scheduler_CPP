@@ -4,6 +4,7 @@
 #include <iostream>
 #include <sstream> 
 #include "Project.hpp"
+#include <algorithm>
 
 using namespace std;
 
@@ -16,9 +17,9 @@ class ProjectManager {
         ~ProjectManager();
         void addProject(string, string);
         void deleteProject(string);
-        void outputProjects();
+        string outputProjects();
         int ProjectSize();
-        Project getProject(string);
+        Project* getProject(string);
         bool doesProjectExist(string);
 };
 
