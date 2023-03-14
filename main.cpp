@@ -198,6 +198,10 @@ int main()
                             }
                         }
                     }
+                    else if(optionsForProject == '0')
+                    {
+                        cout << "Canceled" << endl;
+                    }
                     else if(optionsForProject == 'D')
                     {
                         if(projectToEdit->sizeOfTasksVector() > 0)
@@ -402,6 +406,10 @@ int main()
                                 if(optionsForTasks == 'E')
                                 {
                                     editTask(taskForUserToEdit->getName(), taskForUserToEdit);
+                                }
+                                else if(optionsForTasks == '0')
+                                {
+                                    cout << "Canceled" << endl;
                                 }
                                 else if(optionsForTasks == 'U')
                                 {
