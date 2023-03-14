@@ -357,8 +357,8 @@ int main()
                             {
                                 cout << "Enter B to go back to previous page:" << endl;
                                 cout << "Enter A to add subtask for this task:" << endl;
-                                cout << "Enter E to edit a feature of the Task:" << endl;
-                                cout << "Enter S to edit a feature of the subtask:" << endl;
+                                cout << "Enter E to edit a feature of the task:" << endl;
+                                cout << "Enter S to edit a feature of a subtask:" << endl;
                                 cout << "Enter U to undo changes for the task:" << endl;
                                 cout << "Enter C to undo changes for a subtask:" << endl;
                                 cout << "Enter D to delete a subtask:" << endl;
