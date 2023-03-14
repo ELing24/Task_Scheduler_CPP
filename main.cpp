@@ -17,12 +17,13 @@ int main()
     while(toupper(userOption) != 'Q')
     {
         cout << "Project Menu: " << endl;
+        cout << "Enter A to add a new project:" << endl;
         cout << "Enter O to output all projects:" << endl;
         cout << "Enter D to delete a project:" << endl;
-        cout << "Enter A to add a new project:" << endl;
         cout << "Enter S to get the amount of projects you have in your inventory:" << endl;
-        cout << "Enter E if you would like to edit/inspect a project:" << endl;
+        cout << "Enter E if you would like to edit/inspect a project in the Project Edit Menu:" << endl;
         cout << "Enter Q to quit program" << endl;
+        cout << endl;
         cin >> userOption;
         char checkIfUserIntentionallyPressed ='0';
         while(true)
@@ -132,14 +133,16 @@ int main()
                 char optionsForProject = '0';
                 while(toupper(optionsForProject) != 'B')
                 {
+                    cout << "Project Edit Menu:" << endl;
+                    cout << "Enter A to add a task in this project:" << endl;
                     cout << "Enter P to edit the project's name or description:" << endl;
                     cout << "Enter E to undo an edit for the project's name or description:" << endl;
                     cout << "Enter B to go back to the Project Menu:" << endl;
                     cout << "Enter O to output all task in this project:" << endl;
                     cout << "Enter D to delete a task in this project" << endl;
-                    cout << "Enter A to add a task in this project:" << endl;
                     cout << "Enter T to edit/inspect a task in this project:" << endl;
                     cout << "Enter S to get the amount of complete task for this project:" << endl;
+                    cout << endl;
                     cin >> optionsForProject;
                     char checkIfUserIntentionallyPressed = '0';
                     while(true)
@@ -215,6 +218,10 @@ int main()
                                 }
                             }
                             projectToEdit->deleteTask(findTask);
+                        }
+                        else
+                        {
+                            cout << "You have no task in your inventory" << endl;
                         }
                     }
                     else if(optionsForProject == 'E')
@@ -358,6 +365,7 @@ int main()
                             char optionsForTasks = '0';
                             while(optionsForTasks != 'B')
                             {
+                                cout << "Task and Subtask Menu:" << endl;
                                 cout << "Enter B to go back to previous page:" << endl;
                                 cout << "Enter A to add subtask for this task:" << endl;
                                 cout << "Enter E to edit a feature of the task:" << endl;
@@ -368,6 +376,7 @@ int main()
                                 cout << "Enter P to get the priority of this task:" << endl;
                                 cout << "Enter Z to get the deadline of this task:" << endl;
                                 cout << "Enter O to output all the subtasks in this task:" <<endl;
+                                cout << endl;
                                 cin >> optionsForTasks;
                                 char checkIfUserIntentionallyPressed = '0';
                                 while(true)
