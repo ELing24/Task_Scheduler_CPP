@@ -197,22 +197,25 @@ int main()
                     }
                     else if(optionsForProject == 'D')
                     {
-                        string findTask = "0";
-                        while(true)
+                        if(projectToEdit->sizeOfTasksVector() > 0)
                         {
-                            cout << projectToEdit->outputTasks(true) << endl;
-                            cout << "Enter the name of the task you want to delete:" << endl;
-                            cin >> findTask;
-                            if(projectToEdit->doesTaskExist(findTask) == true)
+                            string findTask = "0";
+                            while(true)
                             {
-                                break;
+                                cout << projectToEdit->outputTasks(true) << endl;
+                                cout << "Enter the name of the task you want to delete:" << endl;
+                                cin >> findTask;
+                                if(projectToEdit->doesTaskExist(findTask) == true)
+                                {
+                                    break;
+                                }
+                                else
+                                {
+                                    cout << "Incorrect Option, Try Again" << endl;
+                                }
                             }
-                            else
-                            {
-                                cout << "Incorrect Option, Try Again" << endl;
-                            }
+                            projectToEdit->deleteTask(findTask);
                         }
-                        projectToEdit->deleteTask(findTask);
                     }
                     else if(optionsForProject == 'E')
                     {
