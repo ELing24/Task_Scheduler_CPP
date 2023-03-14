@@ -266,4 +266,46 @@ TEST(SubTaskTests, ChangeStatus) {
     EXPECT_EQ(subtask.getStatus(), true);
 }
 
+TEST(ProjectManagerTest, AddProjectTest){
+    ProjectManager pm;
+    pm.addProject("Project1", "This is project 1");
+    EXPECT_EQ(pm.ProjectSize(), 1);
+    EXPECT_TRUE(pm.doesProjectExist("Project1"));
+}
 
+TEST(ProjectManagerTest, DeleteProjectTest){
+    ProjectManager pm;
+    pm.addProject("Project1", "This is project 1");
+    pm.deleteProject("Project1");
+    EXPECT_EQ(pm.ProjectSize(), 0);
+    EXPECT_FALSE(pm.doesProjectExist("Project1"));
+}
+
+TEST(ProjectManagerTest, OutputProjectsTest){
+    ProjectManager pm;
+    pm.addProject("Project1", "This is project 1");
+    pm.addProject("Project2", "This is project 2");
+    std::string expected_output = "Name: Project1\nDescription: This is project 1\nName: Project2\nDescription: This is project 2\n";
+    EXPECT_EQ(pm.outputProjects(), expected_output);
+}
+
+TEST(ProjectManagerTest, GetProjectTest){
+    ProjectManager pm;
+    pm.addProject("Project1", "This is project 1");
+    pm.addProject("Project2", "This is project 2");
+    Project* p1 = pm.getProject("Project1");
+    Project* p2 = pm.getProject("Project2");
+    EXPECT_EQ(p1->getProjectName(), "Project1");
+    EXPECT_EQ(p1->getProjectDescription(), "This is project 1");
+    EXPECT_EQ(p2->getProjectName(), "Project2");
+    EXPECT_EQ(p2->getProjectDescription(), "This is project 2");
+}
+
+TEST(ProjectManagerTest, DoesProjectExistTest){
+    ProjectManager pm;
+    pm.addProject("Project1", "This is project 1");
+    pm.addProject("Project2", "This is project 2");
+    EXPECT_TRUE(pm.doesProjectExist("Project1"));
+    EXPECT_TRUE(pm.doesProjectExist("Project2"));
+    EXPECT_FALSE(pm.doesProjectExist("Project3"));
+}
