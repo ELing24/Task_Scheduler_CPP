@@ -24,6 +24,7 @@ int main()
         cout << "Enter E if you would like to edit/inspect a project in the Project Edit Menu:" << endl;
         cout << "Enter Q to quit program" << endl;
         cout << endl;
+        cout << "Enter your desired letter: ";
         cin >> userOption;
         char checkIfUserIntentionallyPressed ='0';
         while(true)
@@ -145,6 +146,7 @@ int main()
                     cout << "Enter T to edit/inspect a task in this project:" << endl;
                     cout << "Enter S to get the amount of complete task for this project:" << endl;
                     cout << endl;
+                    cout << "Enter your desired letter: ";
                     cin >> optionsForProject;
                     char checkIfUserIntentionallyPressed = '0';
                     while(true)
@@ -386,6 +388,7 @@ int main()
                                 cout << "Enter Z to get the deadline of this task:" << endl;
                                 cout << "Enter O to output all the subtasks in this task:" <<endl;
                                 cout << endl;
+                                cout << "Enter your desired letter: ";
                                 cin >> optionsForTasks;
                                 char checkIfUserIntentionallyPressed = '0';
                                 while(true)
