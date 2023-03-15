@@ -1,7 +1,7 @@
 CMAKE_MINIMUM_REQUIRED(VERSION 3.0)
 
 ADD_SUBDIRECTORY(test/googletest)
-
+# g++ -g -O0 -fno-inline src/Project.cpp src/Subtask.cpp src/ProjectManager.cpp src/Task.cpp main.cpp -o runAllFiles
 ADD_EXECUTABLE(testRun
     test/test.cpp
     src/Project.cpp
