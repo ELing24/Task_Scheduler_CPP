@@ -724,7 +724,7 @@ void editTask(string nameOfTask, Task* taskForUserToEdit){
                 cout << "Current: Incomplete" << endl;
             }
             cout << "Enter 1 if you want to make the status of task " <<  tmp->getName()
-            << " complete or 0 if status is uncomplete: " << endl;
+            << " complete or 0 if status is incomplete: " << endl;
             cin >> option;
             while(true)
             {
