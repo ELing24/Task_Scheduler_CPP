@@ -95,11 +95,11 @@ int main()
         else if(toupper(userOption) == 'A')
         {
             string nameForNewProject = "0";
-            cout << "Enter the name that you would like to call this project:" << endl;
+            cout << "Enter the name that you would like to call this project: ";
             cin.ignore();
             getline(cin,nameForNewProject);
             string descriptionForNewProject = "0";
-            cout << "Enter a description for the project:" << endl;
+            cout << "Enter a description for the project: ";
             getline(cin, descriptionForNewProject);
             mainProgram->addProject(nameForNewProject, descriptionForNewProject);
         }
@@ -121,7 +121,7 @@ int main()
                 while(true)
                 {
                     string findProject = "0";
-                    cout << "Enter the name of the project you would like to edit:" << endl;
+                    cout << "Enter the name of the project you would like to edit: ";
                     getline(cin, findProject);
                     if(mainProgram->doesProjectExist(findProject) == false)
                     {
@@ -174,14 +174,14 @@ int main()
                         char optionsForProjectNameOrDescription = '0';
                         while(true)
                         {
-                            cout << "Enter N to edit the name of the project or D to edit the description of the project:" << endl;
+                            cout << "Enter N to edit the name of the project or D to edit the description of the project: ";
                             cin >> optionsForProjectNameOrDescription;
                             optionsForProjectNameOrDescription = toupper(optionsForProjectNameOrDescription);
                             if(optionsForProjectNameOrDescription == 'N')
                             {
                                 cout << "Current: " << projectToEdit->getProjectName() << endl;
                                 string newProjectName = "0";
-                                cout << "Enter the new name you want for this project:" << endl;
+                                cout << "Enter the new name you want for this project: ";
                                 cin.ignore();
                                 getline(cin,newProjectName);
                                 projectToEdit->editProjectName(newProjectName);
@@ -192,7 +192,7 @@ int main()
                                 cout << "Current: " << projectToEdit->getProjectDescription() << endl;
                                 string newProjectDescription = "0";
                                 cin.ignore();
-                                cout << "Enter the new description you want for this project:" << endl;
+                                cout << "Enter the new description you want for this project: ";
                                 getline(cin, newProjectDescription);
                                 projectToEdit->editProject_Description(newProjectDescription);
                                 break;
@@ -237,7 +237,7 @@ int main()
                     else if(optionsForProject == 'E')
                     {
                         char optionsForUndoProject = '0';
-                        cout << "Enter N to undo name of Project or D to undo description of Project:" << endl;
+                        cout << "Enter N to undo name of Project or D to undo description of Project: ";
                         cin >> optionsForUndoProject;
                         optionsForUndoProject = toupper(optionsForUndoProject);
                         while(true)
@@ -268,7 +268,7 @@ int main()
                         {
                             while(true)
                             {
-                                cout << "Enter 1 to output tasks according to deadline or 2 to output tasks according to priority:" << endl;
+                                cout << "Enter 1 to output tasks according to deadline or 2 to output tasks according to priority: ";
                                 cin >> optionForOutputtingFormat;
                                 if(optionForOutputtingFormat == '1')
                                 {
@@ -300,9 +300,9 @@ int main()
                         string deadlineForNewTask = "0";
                         string priorityForNewTask = "0";
                         cin.ignore();
-                        cout << "Enter a name for the new task:" << endl;
+                        cout << "Enter a name for the new task :";
                         getline(cin,nameForNewTask);
-                        cout << "Enter a description for the new task:" << endl;
+                        cout << "Enter a description for the new task :";
                         getline(cin, descriptionForNewTask);
                         bool correctDeadlineInput = false;
                         while(correctDeadlineInput == false)
@@ -331,7 +331,7 @@ int main()
                         while(correctPriorityInput == false)
                         {
                             bool isvalidInputForPriority = true;
-                            cout << "Enter a priority for the task:" << endl;
+                            cout << "Enter a priority for the task: ";
                             cin >> priorityForNewTask;
                             for(int i = 0; i < priorityForNewTask.size(); ++i)
                             {
@@ -361,7 +361,7 @@ int main()
                             while(true)
                             {
                                 string taskToEdit = "0";
-                                cout << "Enter the name of the Task you would like to edit:" << endl;
+                                cout << "Enter the name of the Task you would like to edit: ";
                                 getline(cin,taskToEdit);
                                 if(projectToEdit->doesTaskExist(taskToEdit) == true)
                                 {
@@ -422,7 +422,7 @@ int main()
                                 else if(optionsForTasks == 'U')
                                 {
                                     char optionsForUndoTask = '0';
-                                    cout << "Enter N to undo name, D to undo description, S for status of the task, D to undo deadline, or P to undo priority:" << endl;
+                                    cout << "Enter N to undo name, D to undo description, S for status of the task, D to undo deadline, or P to undo priority: ";
                                     cin >> optionsForUndoTask;
                                     optionsForUndoTask = toupper(optionsForUndoTask);
                                     if(optionsForUndoTask == 'N')
@@ -469,7 +469,7 @@ int main()
                                         while(true)
                                         {
                                             findSubtask = "0";
-                                            cout << "Enter the name of the subtask you want to edit:" << endl;
+                                            cout << "Enter the name of the subtask you want to edit: ";
                                             getline(cin,findSubtask);
                                             if(taskForUserToEdit->doesSubtaskExist(findSubtask)==true)
                                             {
@@ -494,9 +494,9 @@ int main()
                                     string newDescriptionForSubtask = "";
                                     bool newStatusForSubtask = false;
                                     cin.ignore();
-                                    cout << "Enter the name for this subtask:" << endl;
+                                    cout << "Enter the name for this subtask: ";
                                     getline(cin,newNameForSubtask);
-                                    cout << "Enter the description for this subtask:" << endl;
+                                    cout << "Enter the description for this subtask: ";
                                     getline(cin, newDescriptionForSubtask);
                                     taskForUserToEdit->addSubtask(newNameForSubtask, newDescriptionForSubtask, newStatusForSubtask);
                                 }
@@ -526,7 +526,7 @@ int main()
                                         while(true)
                                         {
                                             char optionsForUndoSubtask = '0';
-                                            cout << "Enter N to undo name, D to undo description, or S for status of the subtask:" << endl;
+                                            cout << "Enter N to undo name, D to undo description, or S for status of the subtask: ";
                                             cin >> optionsForUndoSubtask;
                                             optionsForUndoSubtask = toupper(optionsForUndoSubtask);
                                             if(optionsForUndoSubtask == 'N')
@@ -568,7 +568,7 @@ int main()
                                         {
                                             cout << taskForUserToEdit->outputsubs() << endl;
                                             findSubtask = "0";
-                                            cout << "Enter the name of the subtask you want to delete:" << endl;
+                                            cout << "Enter the name of the subtask you want to delete: ";
                                             getline(cin,findSubtask);
                                             if(taskForUserToEdit->doesSubtaskExist(findSubtask)==true)
                                             {
@@ -625,7 +625,7 @@ int main()
                         cin.ignore();
                         while(true)
                         {
-                            cout << "Enter the name of the task you want the deadline for:" << endl;
+                            cout << "Enter the name of the task you want the deadline for: ";
                             getline(cin,nameToGetDeadline);
                             if(projectToEdit->doesTaskExist(nameToGetDeadline) == true)
                             {
@@ -665,7 +665,7 @@ void editTask(string nameOfTask, Task* taskForUserToEdit){
         {
             cout << "Current: " << tmp->getName() << endl;
             string NewName;
-            cout << "Enter the name you want to change: " << endl;
+            cout << "Enter the name you want to change: ";
             cin.ignore();
             getline(cin,NewName);
             tmp->changeName(NewName);
@@ -676,7 +676,7 @@ void editTask(string nameOfTask, Task* taskForUserToEdit){
             cout << "Current: " << tmp->getDescription() << endl;
             string newDescription;
             cin.ignore();
-            cout << "Enter the new description you want to change: " <<endl;
+            cout << "Enter the new description you want to change: ";
             getline(cin, newDescription);
             tmp->changeDescription(newDescription);
             break;
@@ -724,7 +724,7 @@ void editTask(string nameOfTask, Task* taskForUserToEdit){
                 cout << "Current: Incomplete" << endl;
             }
             cout << "Enter 1 if you want to make the status of task " <<  tmp->getName()
-            << " complete or 0 if status is incomplete: " << endl;
+            << " complete or 0 if status is incomplete: ";
             cin >> option;
             while(true)
             {
@@ -753,7 +753,7 @@ void editTask(string nameOfTask, Task* taskForUserToEdit){
             {
                 bool isvalidInputForPriority = true;
                 cout << "Current: " << tmp->getPriority() << endl;
-                cout << "Enter the new priority of this task in digits:" << endl;
+                cout << "Enter the new priority of this task in digits: ";
                 cin >> newPriority;
                 for(int i = 0; i < newPriority.size(); ++i)
                 {
@@ -788,7 +788,7 @@ void editSubtask(string nameOfSubtask, string nameOfTaskForEditSubtask, Task* ta
 {
     Subtask* Sub = taskForUserToEdit->getSubtask(nameOfSubtask);
     string whichToChange = "";
-    cout << "Enter 'name' to modify name, 'description' to modify description, or 'status' to modify status" << endl;
+    cout << "Enter 'name' to modify name, 'description' to modify description, or 'status' to modify status: ";
     cin >> whichToChange;
     while(true)
     {
@@ -796,7 +796,7 @@ void editSubtask(string nameOfSubtask, string nameOfTaskForEditSubtask, Task* ta
         {
             cout << "Current: " << Sub->getName() << endl;
             string NewName;
-            cout << "Enter the name you want to change: " << endl;
+            cout << "Enter the name you want to change: ";
             cin.ignore();
             getline(cin,NewName);
             Sub->changeName(NewName);
@@ -807,7 +807,7 @@ void editSubtask(string nameOfSubtask, string nameOfTaskForEditSubtask, Task* ta
             cout << "Current: " << Sub->getDescription() << endl;
             string newDescription;
             cin.ignore();
-            cout << "Enter the new description you want to change: " <<endl;
+            cout << "Enter the new description you want to change: ";
             getline(cin, newDescription);
             Sub->changeDescription(newDescription);
             break;
@@ -824,7 +824,7 @@ void editSubtask(string nameOfSubtask, string nameOfTaskForEditSubtask, Task* ta
             {
                 cout << "Current: Incomplete" << endl;
             }
-            cout << "Enter 1 if you want to make the status of subtask " << Sub->getName() << " complete or 0 if status is uncomplete: " << endl;
+            cout << "Enter 1 if you want to make the status of subtask " << Sub->getName() << " complete or 0 if status is uncomplete: ";
             cin >> option;
             while(true)
             {
