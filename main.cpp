@@ -208,6 +208,10 @@ int main()
                             }
                         }
                     }
+                    else if(optionsForProject == 'B')
+                    {
+                        continue;
+                    }
                     else if(optionsForProject == 'N')
                     {
                         cout << "Canceled" << endl;
@@ -612,6 +616,14 @@ int main()
                                     {
                                         cout << "You have no subtasks in this inventory" << endl;
                                     }
+                                }
+                                else if(optionsForTasks == 'B')
+                                {
+                                    continue;
+                                }
+                                else
+                                {
+                                    cout << "Invalid Option, Try Again" << endl;
                                 }
                                 
                             }
