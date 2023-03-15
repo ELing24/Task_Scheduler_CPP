@@ -587,7 +587,7 @@ int main()
                                 {
                                     cout << "The priority of this task is " << taskForUserToEdit->getPriority() << endl;
                                 }
-                                else if(optionsForTasks == 'D')
+                                else if(optionsForTasks == 'Z')
                                 {
                                     cout << "The Deadline of this task is " << taskForUserToEdit->getDeadline() << endl;
                                 }
