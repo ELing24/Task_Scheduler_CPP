@@ -33,7 +33,7 @@ int main()
             cin >> checkIfUserIntentionallyPressed;
             if(toupper(checkIfUserIntentionallyPressed) == 'N' || toupper(checkIfUserIntentionallyPressed) == 'n')
             {
-                userOption = 'Z';
+                userOption = 'N';
                 break;
             }
             else if(toupper(checkIfUserIntentionallyPressed) == 'Y' || toupper(checkIfUserIntentionallyPressed) == 'y')
@@ -56,7 +56,7 @@ int main()
                 cout << "You have no projects in your inventory" << endl;
             }
         }
-        else if(toupper(userOption) == 'Z')\
+        else if(toupper(userOption) == 'N')
         {
             cout << "Canceled" << endl;
         }
@@ -154,7 +154,7 @@ int main()
                         cin >> checkIfUserIntentionallyPressed;
                         if(toupper(checkIfUserIntentionallyPressed) =='N' || toupper(checkIfUserIntentionallyPressed) == 'n')
                         {
-                            optionsForProject = '0';
+                            optionsForProject = 'N';
                             break;
                         }
                         else if(toupper(checkIfUserIntentionallyPressed) == 'Y' || toupper(checkIfUserIntentionallyPressed) == 'y')
@@ -201,7 +201,7 @@ int main()
                             }
                         }
                     }
-                    else if(optionsForProject == '0')
+                    else if(optionsForProject == 'N')
                     {
                         cout << "Canceled" << endl;
                     }
@@ -395,7 +395,7 @@ int main()
                                     cin >> checkIfUserIntentionallyPressed;
                                     if(toupper(checkIfUserIntentionallyPressed) == 'N' || toupper(checkIfUserIntentionallyPressed) == 'n')
                                     {
-                                        optionsForTasks = '0';
+                                        optionsForTasks = 'N';
                                         break;
                                     }
                                     else if(toupper(checkIfUserIntentionallyPressed) == 'y' || toupper(checkIfUserIntentionallyPressed) == 'Y')
@@ -412,7 +412,7 @@ int main()
                                 {
                                     editTask(taskForUserToEdit->getName(), taskForUserToEdit);
                                 }
-                                else if(optionsForTasks == '0')
+                                else if(optionsForTasks == 'N')
                                 {
                                     cout << "Canceled" << endl;
                                 }
