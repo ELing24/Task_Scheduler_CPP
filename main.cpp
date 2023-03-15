@@ -16,12 +16,13 @@ int main()
     char userOption = '0';
     while(toupper(userOption) != 'Q')
     {
+        cout << endl;
         cout << "Project Menu: " << endl;
-        cout << "Enter A to add a new project:" << endl;
-        cout << "Enter O to output all projects:" << endl;
-        cout << "Enter D to delete a project:" << endl;
-        cout << "Enter S to get the amount of projects you have in your inventory:" << endl;
-        cout << "Enter E if you would like to edit/inspect a project in the Project Edit Menu:" << endl;
+        cout << "Enter A to add a new project" << endl;
+        cout << "Enter O to output all projects" << endl;
+        cout << "Enter D to delete a project" << endl;
+        cout << "Enter S to get the amount of projects you have in your inventory" << endl;
+        cout << "Enter E if you would like to edit/inspect a project in the Project Edit Menu" << endl;
         cout << "Enter Q to quit program" << endl;
         cout << endl;
         cout << "Enter your desired letter: ";
@@ -32,6 +33,7 @@ int main()
             cout << "Are you sure that you want to enter " << userOption << "?" << endl;
             cout << "Enter Y to continue or N to cancel: ";
             cin >> checkIfUserIntentionallyPressed;
+            cout << endl;
             if(toupper(checkIfUserIntentionallyPressed) == 'N' || toupper(checkIfUserIntentionallyPressed) == 'n')
             {
                 userOption = 'N';
@@ -136,15 +138,16 @@ int main()
                 char optionsForProject = '0';
                 while(toupper(optionsForProject) != 'B')
                 {
+                    cout << endl;
                     cout << "Project Edit Menu:" << endl;
-                    cout << "Enter A to add a task in this project:" << endl;
-                    cout << "Enter P to edit the project's name or description:" << endl;
-                    cout << "Enter E to undo an edit for the project's name or description:" << endl;
-                    cout << "Enter B to go back to the Project Menu:" << endl;
-                    cout << "Enter O to output all task in this project:" << endl;
+                    cout << "Enter A to add a task in this project" << endl;
+                    cout << "Enter P to edit the project's name or description" << endl;
+                    cout << "Enter E to undo an edit for the project's name or description" << endl;
+                    cout << "Enter B to go back to the Project Menu" << endl;
+                    cout << "Enter O to output all task in this project" << endl;
                     cout << "Enter D to delete a task in this project" << endl;
-                    cout << "Enter T to edit/inspect a task in this project:" << endl;
-                    cout << "Enter S to get the amount of complete task for this project:" << endl;
+                    cout << "Enter T to edit/inspect a task in this project" << endl;
+                    cout << "Enter S to get the amount of complete task for this project" << endl;
                     cout << endl;
                     cout << "Enter your desired letter: ";
                     cin >> optionsForProject;
@@ -154,6 +157,7 @@ int main()
                         cout << "Are you sure that you want to enter " << optionsForProject << "?" << endl;
                         cout << "Enter Y to continue or N to cancel: ";
                         cin >> checkIfUserIntentionallyPressed;
+                        cout << endl;
                         if(toupper(checkIfUserIntentionallyPressed) =='N' || toupper(checkIfUserIntentionallyPressed) == 'n')
                         {
                             optionsForProject = 'N';
@@ -300,9 +304,9 @@ int main()
                         string deadlineForNewTask = "0";
                         string priorityForNewTask = "0";
                         cin.ignore();
-                        cout << "Enter a name for the new task :";
+                        cout << "Enter a name for the new task: ";
                         getline(cin,nameForNewTask);
-                        cout << "Enter a description for the new task :";
+                        cout << "Enter a description for the new task: ";
                         getline(cin, descriptionForNewTask);
                         bool correctDeadlineInput = false;
                         while(correctDeadlineInput == false)
@@ -376,17 +380,18 @@ int main()
                             char optionsForTasks = '0';
                             while(optionsForTasks != 'B')
                             {
+                                cout << endl;
                                 cout << "Task and Subtask Menu:" << endl;
-                                cout << "Enter B to go back to previous page:" << endl;
-                                cout << "Enter A to add subtask for this task:" << endl;
-                                cout << "Enter E to edit a feature of the task:" << endl;
-                                cout << "Enter S to edit a feature of a subtask:" << endl;
-                                cout << "Enter U to undo changes for the task:" << endl;
-                                cout << "Enter C to undo changes for a subtask:" << endl;
-                                cout << "Enter D to delete a subtask:" << endl;
-                                cout << "Enter P to get the priority of this task:" << endl;
-                                cout << "Enter Z to get the deadline of this task:" << endl;
-                                cout << "Enter O to output all the subtasks in this task:" <<endl;
+                                cout << "Enter B to go back to previous page" << endl;
+                                cout << "Enter A to add subtask for this task" << endl;
+                                cout << "Enter E to edit a feature of the task" << endl;
+                                cout << "Enter S to edit a feature of a subtask" << endl;
+                                cout << "Enter U to undo changes for the task" << endl;
+                                cout << "Enter C to undo changes for a subtask" << endl;
+                                cout << "Enter D to delete a subtask" << endl;
+                                cout << "Enter P to get the priority of this task" << endl;
+                                cout << "Enter Z to get the deadline of this task" << endl;
+                                cout << "Enter O to output all the subtasks in this task" <<endl;
                                 cout << endl;
                                 cout << "Enter your desired letter: ";
                                 cin >> optionsForTasks;
@@ -396,6 +401,7 @@ int main()
                                     cout << "Are you sure that you want to enter " << optionsForTasks << "?" << endl;
                                     cout << "Enter Y to continue or N to cancel: ";
                                     cin >> checkIfUserIntentionallyPressed;
+                                    cout << endl;
                                     if(toupper(checkIfUserIntentionallyPressed) == 'N' || toupper(checkIfUserIntentionallyPressed) == 'n')
                                     {
                                         optionsForTasks = 'N';
@@ -676,7 +682,7 @@ void editTask(string nameOfTask, Task* taskForUserToEdit){
             cout << "Current: " << tmp->getDescription() << endl;
             string newDescription;
             cin.ignore();
-            cout << "Enter the new description you want to change: ";
+            cout << "Enter the new description you want to change to: ";
             getline(cin, newDescription);
             tmp->changeDescription(newDescription);
             break;
@@ -689,7 +695,7 @@ void editTask(string nameOfTask, Task* taskForUserToEdit){
             {   
                 bool isValidInputForDeadline = true;
                 cout << "Current: " << tmp->getDeadline() << endl;
-                cout << "Enter the new deadline you want to change: FORMAT(YYYYMMDD):" << endl;
+                cout << "Enter the new deadline you want to change to: FORMAT(YYYYMMDD):" << endl;
                 cout << "EX: 20220122 = January 21st, 2022:" << endl;
                 cin >> newDeadline;
                 for(int i = 0; i < newDeadline.size(); ++i)
@@ -796,7 +802,7 @@ void editSubtask(string nameOfSubtask, string nameOfTaskForEditSubtask, Task* ta
         {
             cout << "Current: " << Sub->getName() << endl;
             string NewName;
-            cout << "Enter the name you want to change: ";
+            cout << "Enter the new name you want to change to: ";
             cin.ignore();
             getline(cin,NewName);
             Sub->changeName(NewName);
@@ -807,7 +813,7 @@ void editSubtask(string nameOfSubtask, string nameOfTaskForEditSubtask, Task* ta
             cout << "Current: " << Sub->getDescription() << endl;
             string newDescription;
             cin.ignore();
-            cout << "Enter the new description you want to change: ";
+            cout << "Enter the new description you want to change to: ";
             getline(cin, newDescription);
             Sub->changeDescription(newDescription);
             break;
