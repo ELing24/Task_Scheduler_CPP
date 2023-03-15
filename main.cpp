@@ -30,7 +30,7 @@ int main()
         while(true)
         {
             cout << "Are you sure that you want to enter " << userOption << "?" << endl;
-            cout << "Enter Y to continue or N to cancel:" << endl;
+            cout << "Enter Y to continue or N to cancel: ";
             cin >> checkIfUserIntentionallyPressed;
             if(toupper(checkIfUserIntentionallyPressed) == 'N' || toupper(checkIfUserIntentionallyPressed) == 'n')
             {
@@ -152,7 +152,7 @@ int main()
                     while(true)
                     {
                         cout << "Are you sure that you want to enter " << optionsForProject << "?" << endl;
-                        cout << "Enter Y to continue or N to cancel:" << endl;
+                        cout << "Enter Y to continue or N to cancel: ";
                         cin >> checkIfUserIntentionallyPressed;
                         if(toupper(checkIfUserIntentionallyPressed) =='N' || toupper(checkIfUserIntentionallyPressed) == 'n')
                         {
@@ -394,7 +394,7 @@ int main()
                                 while(true)
                                 {
                                     cout << "Are you sure that you want to enter " << optionsForTasks << "?" << endl;
-                                    cout << "Enter Y to continue or N to cancel:" << endl;
+                                    cout << "Enter Y to continue or N to cancel: ";
                                     cin >> checkIfUserIntentionallyPressed;
                                     if(toupper(checkIfUserIntentionallyPressed) == 'N' || toupper(checkIfUserIntentionallyPressed) == 'n')
                                     {
