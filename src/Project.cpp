@@ -99,6 +99,7 @@ string Project::outputTasks(bool optionForOutputting) {
         os << "Priority: " << task->getPriority() << endl;
         os << "Status: " << (task->getStatus() ? "Complete" : "Incomplete") << endl;
         os << "----------------------" << endl;
+        os << endl;
     }
     return os.str();
 }

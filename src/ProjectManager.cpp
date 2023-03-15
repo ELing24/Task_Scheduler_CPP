@@ -31,6 +31,7 @@ string ProjectManager::outputProjects(){
         Project* projectsToOutput = projects[i];
         os << "Name: " << projectsToOutput->getProjectName() << endl;
         os << "Description: " << projectsToOutput->getProjectDescription() << endl;
+        os << endl;
     }
     return os.str();
 }

@@ -53,6 +53,7 @@ int main()
             if(mainProgram->ProjectSize() > 0)
             {
                 cout << mainProgram->outputProjects() << endl;
+                cout << endl;
             }
             else
             {

@@ -80,6 +80,7 @@ string Task::outputsubs(){
         os << "Description: " << sub->getDescription() << endl;
         os << "Status: " << (sub->getStatus() ? "Complete" : "Incomplete") << endl;
         os << "----------------------" << endl;
+        os << endl;
     }
     return os.str();
 }
