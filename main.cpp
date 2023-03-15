@@ -420,6 +420,7 @@ int main()
                                 {
                                     char optionsForUndoTask = '0';
                                     cout << "Enter N to undo name, D to undo description, S for status of the subtask, D to undo deadline, or P to undo priority:" << endl;
+                                    cin >> optionsForUndoTask;
                                     optionsForUndoTask = toupper(optionsForUndoTask);
                                     if(optionsForUndoTask == 'N')
                                     {
