@@ -236,7 +236,7 @@ int main()
                     {
                         char optionsForUndoProject = '0';
                         cout << "Enter N to undo name of Project or D to undo description of Project:" << endl;
-                        cin >> optionsForProject;
+                        cin >> optionsForUndoProject;
                         optionsForUndoProject = toupper(optionsForUndoProject);
                         while(true)
                         {
