@@ -78,6 +78,28 @@ Undoing an operation: The action to undo would be specified by the user.
  > <img width="567" alt="Screen Shot 2023-03-15 at 3 38 28 PM" src="https://user-images.githubusercontent.com/79858435/225485210-6efe534b-c0fb-411b-a56f-cf262da36173.png">
  > <img width="593" alt="Screen Shot 2023-03-15 at 3 47 52 PM" src="https://user-images.githubusercontent.com/79858435/225485249-bfc80255-e376-4f4a-a045-a7926857dd2a.png">
  > <img width="487" alt="Screen Shot 2023-03-15 at 3 50 06 PM" src="https://user-images.githubusercontent.com/79858435/225485263-a3d96251-4d33-48f5-b303-64afc4db39d2.png">
+ > A
+ > 
+ > When the user picks A, the user is prompted to enter values for the Project name and description. Then the Project Menu appears for further options.
+ > O
+ > 
+ > When the user selects O, the program retrieves all the existing projects from the project inventory and displays them to the user. The specific implementation of how the projects are displayed will depend on the design of the program, but one possible way to do it is to print out a list of all the projects with their names and descriptions,  After displaying the list of projects, the program could return the user to the Project Menu to allow them to choose another option.
+> D
+> 
+> When the user selects this option, the program prompts the user to enter the name of the project they want to delete. The program then searches the project inventory for a project with that name and, if it is found, deletes it from the inventory. The program then returns them to the Project Menu.
+>S
+>
+> When the user selects this option, the program retrieves the number of projects in the inventory and displays it to the user. The program then returns the user to the Project Menu.
+>E
+>
+>When the user selects this option, the program prompts the user to enter the name of the project they want to edit or inspect. The program then searches the project inventory for a project with that name and, if it is found, displays the project information to the user. The program then presents the Project Edit Menu, which allows the user to edit or delete the project, add tasks to the project, go back to the main Project Menu and more.
+
+
+
+
+
+
+
 
 
 
