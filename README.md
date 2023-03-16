@@ -75,6 +75,12 @@ Undoing an operation: The action to undo would be specified by the user.
  
  ## Screenshots
  > Screenshots of the input/output after running your application
+ > <img width="567" alt="Screen Shot 2023-03-15 at 3 38 28 PM" src="https://user-images.githubusercontent.com/79858435/225485210-6efe534b-c0fb-411b-a56f-cf262da36173.png">
+ > <img width="593" alt="Screen Shot 2023-03-15 at 3 47 52 PM" src="https://user-images.githubusercontent.com/79858435/225485249-bfc80255-e376-4f4a-a045-a7926857dd2a.png">
+ > <img width="487" alt="Screen Shot 2023-03-15 at 3 50 06 PM" src="https://user-images.githubusercontent.com/79858435/225485263-a3d96251-4d33-48f5-b303-64afc4db39d2.png">
+
+
+
  ## Installation/Usage
  > Instructions on installing and running your application
  ## Testing
