@@ -78,7 +78,7 @@ Undoing an operation: The action to undo would be specified by the user.
  ## Installation/Usage
  > Instructions on installing and running your application
  ## Testing
- > How was your project tested/validated? If you used CI, you should have a "build passing" badge in this README.
+ > How was your project tested/validated?
  
 Our project was tested using the Google Test framework. The tests are testing classes and their methods, including the Task, Subtask, Project, and ProjectManager classes. The tests are checking that the methods of these classes are functioning correctly and producing the expected outputs.
 
