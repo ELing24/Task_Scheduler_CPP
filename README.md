@@ -140,43 +140,43 @@ Undoing an operation: The action to undo would be specified by the user.
 
 > * B
 >
->When the user picks B, the application or task menu will take them back to the previous page.
+> When the user picks B, the application or task menu will take them back to the previous page.
 
 > * A
 >
-When the user picks A, the user will be prompted to enter the details of a new subtask, such as its name and description. Once completed, the Task and Subtask Menu will appear with further options.
+> When the user picks A, the user will be prompted to enter the details of a new subtask, such as its name and description. Once completed, the Task and Subtask Menu will appear with further options.
 
 > * E
 >
-When the user picks E, the user will be prompted to enter updated details for the current task, such as its name, description, deadline, priority and status. Once completed, the Project Menu will appear with further options.
+> When the user picks E, the user will be prompted to enter updated details for the current task, such as its name, description, deadline, priority and status. Once completed, the Project Menu will appear with further options.
 
 > * S
 >
-When the user picks S, the user will be prompted to select the subtask they want to edit and then enter the updated details for that subtask. Once completed, the Project Menu will appear with further options.
+> When the user picks S, the user will be prompted to select the subtask they want to edit and then enter the updated details for that subtask. Once completed, the Project Menu will appear with further options.
 
 > * U
 >
-When the user picks U, the application will prompt the user to confirm whether they want to undo any changes made to the current task.
+> When the user picks U, the application will prompt the user to confirm whether they want to undo any changes made to the current task.
 
 > * C
 >
-When the user picks C, the user will be prompted to select the subtask they want to undo changes for and then confirm whether the undo was successful.
+> When the user picks C, the user will be prompted to select the subtask they want to undo changes for and then confirm whether the undo was successful.
 
 > * D
 >
-When the user picks D, the user will be prompted to select the subtask they want to delete and then confirm whether they want to delete it or not.
+> When the user picks D, the user will be prompted to select the subtask they want to delete and then confirm whether they want to delete it or not.
 
 > * P
 >
-When the user picks P, the application will display the priority of the current task. And Subtask Menu will appear with further options.
+> When the user picks P, the application will display the priority of the current task. And Subtask Menu will appear with further options.
 
 > * Z
 >
-When the user picks Z, the application will display the deadline of the current task. And Subtask Menu will appear with further options.
+> When the user picks Z, the application will display the deadline of the current task. And Subtask Menu will appear with further options.
 
 > * O
 >
-When the user picks O, an output of a list of all subtasks will be presented to the user. And Subtask Menu will appear with further options.
+> When the user picks O, an output of a list of all subtasks will be presented to the user. And Subtask Menu will appear with further options.
 
 
 
