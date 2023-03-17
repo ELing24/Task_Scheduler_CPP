@@ -129,7 +129,7 @@ int main()
                     getline(cin, findProject);
                     if(mainProgram->doesProjectExist(findProject) == false)
                     {
-                        cout << "Project does not exist:" << endl;
+                        cout << "Project does not exist: " << endl;
                     }
                     else
                     {
