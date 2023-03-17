@@ -25,8 +25,8 @@ undo these operations.
 > * Valgrind - Tool used for memory access error and leak detections
 
 > ### Inputs:
->Creating a new task: The task's title, description, categorization, priority, duration, and due date would all be values that the user would supply. Some of these parameters might not be required.
->Creating a new task list: The task list would be given a name by the user.
+>Creating a new task: The task's title, description, priority, duration, and due date would all be values that the user would supply. Some of these parameters might not be required.
+>Creating a new task list: The task list would be given a title, description, priority, duration, and due date by the user.
 >Adding a task to a task list: The task and task list would be specified by the user.
 >Removing a task from a task list: The task and task list to be removed from would be specified by the user.
 >Editing a task: The job to update and the new values for its characteristics would be specified by the user.
