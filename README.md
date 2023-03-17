@@ -45,34 +45,6 @@ Undoing an operation: The action to undo would be specified by the user.
  ![](images/UML_CS100P.png)
  > There are five classes in our class diagram. The subtask and Task classes will inherit the traits from the Basic class. A name, description, and status are frequent characteristics shared by subtasks and tasks. As a class job is more significant than a subtask, it has the priority and deadline that a subtask does not. There is a compositional link between the Task class and the vector that stores its many subtasks. In case the user wants to combine tasks together and have subtasks inside them, the class Project is another one that will contain a vector that keeps several tasks in one location. If the user wants to create several projects, it helps arrange the number of them. The single responsibility concept, another SOLID element, was added to our project. The user interface is solely the responsibility of our main file, which will also output all content to the terminal. However, while our ProjectManager class is designed to manage several projects, it also functions as a single responsibility job. Liskov's Substitution Principle is another SOLID concept that we have included into our software. Any child class, such as our Task class, will inherit the same qualities and characteristics from our Subtask class, which acts as a base class. The Liskov Substitution Principle (LSP) is the idea that objects from a superclass should be able to be substituted with objects from its subclasses without the application being broken. In other words, our goal is to have our subclass objects behave identically to our superclass objects, which is what our subtask and task are doing.
  
- > ## Phase III
- > You will need to schedule a check-in for the second scrum meeting with the same reader you had your first scrum meeting with (using Calendly). Your entire team must be present. This meeting will occur on week 8 during lab time.
- 
- > BEFORE the meeting you should do the following:
- > * Update your class diagram from Phase II to include any feedback you received from your TA/grader.
- > * Considering the SOLID design principles, reflect back on your class diagram and think about how you can use the SOLID principles to improve your design. You should then update the README.md file by adding the following:
- >   * A new class diagram incorporating your changes after considering the SOLID principles.
- >   * For each update in your class diagram, you must explain in 3-4 sentences:
- >     * What SOLID principle(s) did you apply?
- >     * How did you apply it? i.e. describe the change.
- >     * How did this change help you write better code?
- > * Perform a new sprint plan like you did in Phase II.
- > * You should also make sure that your README file (and Project board) are up-to-date reflecting the current status of your project and the most recent class diagram. Previous versions of the README file should still be visible through your commit history.
- 
-> During the meeting with your reader you will discuss: 
- > * How effective your last sprint was (each member should talk about what they did)
- > * Any tasks that did not get completed last sprint, and how you took them into consideration for this sprint
- > * Any bugs you've identified and created issues for during the sprint. Do you plan on fixing them in the next sprint or are they lower priority?
- > * What tasks you are planning for this next sprint.
-
- 
- > ## Final deliverable
- > All group members will give a demo to the reader during lab time. ou should schedule your demo on Calendly with the same reader who took your second scrum meeting. The reader will check the demo and the project GitHub repository and ask a few questions to all the team members. 
- > Before the demo, you should do the following:
- > * Complete the sections below (i.e. Screenshots, Installation/Usage, Testing)
- > * Plan one more sprint (that you will not necessarily complete before the end of the quarter). Your In-progress and In-testing columns should be empty (you are not doing more work currently) but your TODO column should have a full sprint plan in it as you have done before. This should include any known bugs (there should be some) or new features you would like to add. These should appear as issues/cards on your Project board.
- > * Make sure your README file and Project board are up-to-date reflecting the current status of your project (e.g. any changes that you have made during the project such as changes to your class diagram). Previous versions should still be visible through your commit history. 
- 
  ## Screenshots
  > Screenshots of the input/output after running your application
  > <img width="567" alt="Screen Shot 2023-03-15 at 3 38 28 PM" src="https://user-images.githubusercontent.com/79858435/225485210-6efe534b-c0fb-411b-a56f-cf262da36173.png">
