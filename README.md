@@ -93,6 +93,13 @@ Undoing an operation: The action to undo would be specified by the user.
 > * E
 >
 >When the user selects this option, the program prompts the user to enter the name of the project they want to edit or inspect. The program then searches the project inventory for a project with that name and, if it is found, displays the project information to the user. The program then presents the Project Edit Menu, which allows the user to edit or delete the project, add tasks to the project, go back to the main Project Menu and more.
+>
+><img width="633" alt="Screen Shot 2023-03-17 at 5 21 02 AM" src="https://user-images.githubusercontent.com/79858435/225903470-d303608e-c0ac-4325-8f6e-d86941edf526.png">
+> <img width="549" alt="Screen Shot 2023-03-17 at 5 25 39 AM" src="https://user-images.githubusercontent.com/79858435/225904221-a958bf21-ec6c-4679-a0a3-42e5da717cdf.png">
+> <img width="664" alt="Screen Shot 2023-03-17 at 5 26 13 AM" src="https://user-images.githubusercontent.com/79858435/225904288-bce918dc-d740-4c3a-9a86-d8435b344dcc.png">
+
+
+
 
 
 
