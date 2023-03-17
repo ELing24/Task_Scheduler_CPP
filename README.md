@@ -138,8 +138,45 @@ Undoing an operation: The action to undo would be specified by the user.
 > <img width="461" alt="Screen Shot 2023-03-17 at 7 23 31 AM" src="https://user-images.githubusercontent.com/79858435/225933751-9c0342c3-6ef1-4f88-8a14-e5719670e6c4.png">
 > <img width="550" alt="Screen Shot 2023-03-17 at 7 23 46 AM" src="https://user-images.githubusercontent.com/79858435/225933841-d1ad995b-a498-49fb-9ed9-84bdbfed88f0.png">
 
+> * B
+>
+>When the user picks B, the application or task menu will take them back to the previous page.
 
+> * A
+>
+When the user picks A, the user will be prompted to enter the details of a new subtask, such as its name and description. Once completed, the Task and Subtask Menu will appear with further options.
 
+> * E
+>
+When the user picks E, the user will be prompted to enter updated details for the current task, such as its name, description, deadline, priority and status. Once completed, the Project Menu will appear with further options.
+
+> * S
+>
+When the user picks S, the user will be prompted to select the subtask they want to edit and then enter the updated details for that subtask. Once completed, the Project Menu will appear with further options.
+
+> * U
+>
+When the user picks U, the application will prompt the user to confirm whether they want to undo any changes made to the current task.
+
+> * C
+>
+When the user picks C, the user will be prompted to select the subtask they want to undo changes for and then confirm whether the undo was successful.
+
+> * D
+>
+When the user picks D, the user will be prompted to select the subtask they want to delete and then confirm whether they want to delete it or not.
+
+> * P
+>
+When the user picks P, the application will display the priority of the current task. And Subtask Menu will appear with further options.
+
+> * Z
+>
+When the user picks Z, the application will display the deadline of the current task. And Subtask Menu will appear with further options.
+
+> * O
+>
+When the user picks O, an output of a list of all subtasks will be presented to the user. And Subtask Menu will appear with further options.
 
 
 
