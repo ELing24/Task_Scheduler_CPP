@@ -13,7 +13,7 @@ undo these operations.
 
 
 > ### Important or interesting to us
-> * As a college student there are many assignments and projects every week. To complete these assignments efficiently and on time, we need to have a proper planning for these projects. Therefore, a task scheduler is necessary for us. This application can help us to schedule our time properly. This way, we can avoid missing or not being able to finish our assignments due to lack of time. It also helps us to prioritize our assignments according to their complexity and deadline, so that we don't have too many assignments to start with.
+> * As a college student there are many assignments and projects every week. To complete these assignments efficiently and on time, we need to have a proper planning for these projects. Therefore, a task scheduler is necessary for us. This application can help us to schedule our time properly. This way, we can avoid missing or not being able to finish our assignments due to lack of time and unorganization. It also helps us to prioritize our assignments according to their complexity and deadline, so that we don't have too many assignments to start with.
 
 > ### Tools and Languages
 > * C++ - Programming Language Used
@@ -25,17 +25,17 @@ undo these operations.
 > * Valgrind - Tool used for memory access error and leak detections
 
 > ### Inputs:
->Creating a new task: The task's title, description, categorization, priority, duration, and due date would all be values that the user would supply. Some of these parameters might not be required.
-Creating a new task list: The task list would be given a name by the user.
-Adding a task to a task list: The task and task list would be specified by the user.
-Removing a task from a task list: The task and task list to be removed from would be specified by the user.
-Editing a task: The job to update and the new values for its characteristics would be specified by the user.
-Deleting a task: The job to remove would be specified by the user.
-Displaying a task list: The task list to display would be chosen by the user.
-Undoing an operation: The action to undo would be specified by the user.
+>Creating a new task: The task's title, description, priority, duration, and due date would all be values that the user would supply. Some of these parameters might not be required.
+>Creating a new task list: The task list would be given a title, description, priority, duration, and due date by the user.
+>Adding a task to a task list: The task and task list would be specified by the user.
+>Removing a task from a task list: The task and task list to be removed from would be specified by the user.
+>Editing a task: The job to update and the new values for its characteristics would be specified by the user.
+>Deleting a task: The job to remove would be specified by the user.
+>Displaying a task list: The task list to display would be chosen by the user.
+>Undoing an operation: The action to undo would be specified by the user.
 
 > ### Outputs:
->The task lists and their tasks would be displayed as the application's outputs. The application might, for instance, output the name of the task list together with the title, description, classification, priority, duration, and due date of each item in the list when showing a task list. In addition, the program would provide any necessary confirmations or error messages, such as "Task successfully added to task list."
+>The task lists and their tasks would be displayed as the application's outputs. The application might, for instance, output the name of the task list together with the title, description, priority, duration, and due date of each item in the list when showing a task list. In addition, the program would provide any necessary confirmations or error messages, such as "Task successfully added to task list."
 
 > ### Features
 > * The user of the program will be able to enter subtasks integrated inside of the task. As an example, if the user creates a task that's called "Clean Kitchen", then the user can also create subtasks within that task such as "Wash Dishes", "Take Out Trash", "Clean Out Refrigerator", or "Wipe Counters". Users will be prompted to enter the name of the task, a description of the task, the status of the task, and the deadline for the task. Users can prioritize tasks by ranking them in order of importance. Depending on each task's priority, the program would output the tasks in a particular format. The user can evaluate whether task is more significant than the other by viewing it in a specific manner. Users can be able to edit and delete tasks. The user has the flexibility to alter the name, description, due date, and status whenever they want. A user has the option to delete a task if they decide they no longer want it to be visible. Users have the option to undo their activity if they accidentally edit tasks in the wrong way. The user won't have to delete and start a brand-new task as a result.
