@@ -27,7 +27,7 @@ void ProjectManager::deleteProject(string ProjectToDelete){
 
 string ProjectManager::outputProjects(){
     stringstream os;
-    for (int i = 0; i < projects.size(); ++i) {
+    for (int i = 0; i < projects.size(); ++i){
         Project* projectsToOutput = projects[i];
         os << "Name: " << projectsToOutput->getProjectName() << endl;
         os << "Description: " << projectsToOutput->getProjectDescription() << endl;
