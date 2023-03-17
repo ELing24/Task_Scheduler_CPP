@@ -63,7 +63,7 @@ TEST(TaskTest, outputsubs){
 
     Task task2("test2", "description2", 2, 2, false);
     task2.addSubtask("subtask1", "description1", false);
-    string expectedOutput2 = "Name: subtask1\nDescription: description1\nStatus: Incomplete\n----------------------\n";
+    string expectedOutput2 = "Name: subtask1\nDescription: description1\nStatus: Incomplete\n----------------------\n\n";
     ASSERT_EQ(expectedOutput2, task2.outputsubs());
 }
 
@@ -120,7 +120,7 @@ TEST(ProjectTest, SortByDeadline) {
     project.addTask("Task1", "This is task 1.", 3, 1, false);
     project.addTask("Task2", "This is task 2.", 5, 2, true);
     project.addTask("Task3", "This is task 3.", 2, 3, true);
-    string expectedOutput = "Name: Task3\nDescription: This is task 3.\nDeadline: 2\nPriority: 3\nStatus: Complete\n----------------------\nName: Task1\nDescription: This is task 1.\nDeadline: 3\nPriority: 1\nStatus: Incomplete\n----------------------\nName: Task2\nDescription: This is task 2.\nDeadline: 5\nPriority: 2\nStatus: Complete\n----------------------\n";
+    string expectedOutput = "Name: Task3\nDescription: This is task 3.\nDeadline: 2\nPriority: 3\nStatus: Complete\n----------------------\n\nName: Task1\nDescription: This is task 1.\nDeadline: 3\nPriority: 1\nStatus: Incomplete\n----------------------\n\nName: Task2\nDescription: This is task 2.\nDeadline: 5\nPriority: 2\nStatus: Complete\n----------------------\n\n";
     EXPECT_EQ(project.outputTasks(true), expectedOutput);
 }
 TEST(ProjectTest, sortByPriorityTest) {
@@ -151,21 +151,22 @@ TEST(ProjectTest, OutputTasksSortedByDeadline) {
     "Deadline: 20230214\n"
     "Priority: 3\n"
     "Status: Incomplete\n"
-    "----------------------\n"
+    "----------------------\n\n"
     "Name: Task1\n"
     "Description: Description 1\n"
     "Deadline: 20230215\n"
     "Priority: 1\n"
     "Status: Incomplete\n"
-    "----------------------\n"
+    "----------------------\n\n"
     "Name: Task2\n"
     "Description: Description 2\n"
     "Deadline: 20230216\n"
     "Priority: 2\n"
     "Status: Incomplete\n"
-    "----------------------\n";
+    "----------------------\n\n";
   EXPECT_EQ(project.outputTasks(true), expected_output);
 }
+
 TEST(ProjectTest, DeleteExistingTask) {
   Project p("Project1", "Description 1");
   p.addTask("Task1", "Description 1", 20230228, 3, false);
@@ -285,7 +286,7 @@ TEST(ProjectManagerTest, OutputProjectsTest){
     ProjectManager pm;
     pm.addProject("Project1", "This is project 1");
     pm.addProject("Project2", "This is project 2");
-    std::string expected_output = "Name: Project1\nDescription: This is project 1\nName: Project2\nDescription: This is project 2\n";
+    std::string expected_output = "Name: Project1\nDescription: This is project 1\n\nName: Project2\nDescription: This is project 2\n\n";
     EXPECT_EQ(pm.outputProjects(), expected_output);
 }
 
