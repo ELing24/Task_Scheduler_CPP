@@ -130,6 +130,22 @@ Undoing an operation: The action to undo would be specified by the user.
 > * S 
 > 
 > When the user selects S, the application outputs the number of tasks in the current project that have been marked as complete.
+> <img width="1113" alt="Screen Shot 2023-03-17 at 7 18 19 AM" src="https://user-images.githubusercontent.com/79858435/225931556-ef0c8908-4159-4141-8952-8972df58a574.png">
+> <img width="819" alt="Screen Shot 2023-03-17 at 7 19 35 AM" src="https://user-images.githubusercontent.com/79858435/225931631-48319821-9db1-48b3-a26e-d5094c2ab5e1.png">
+> <img width="381" alt="Screen Shot 2023-03-17 at 7 22 33 AM" src="https://user-images.githubusercontent.com/79858435/225933098-1a1e8d38-b60c-4b44-a162-17c9fa7acc49.png">
+> 
+> <img width="543" alt="Screen Shot 2023-03-17 at 7 23 06 AM" src="https://user-images.githubusercontent.com/79858435/225933707-2ef03b49-ab9e-4464-a676-013f4284683f.png">
+> <img width="461" alt="Screen Shot 2023-03-17 at 7 23 31 AM" src="https://user-images.githubusercontent.com/79858435/225933751-9c0342c3-6ef1-4f88-8a14-e5719670e6c4.png">
+> <img width="550" alt="Screen Shot 2023-03-17 at 7 23 46 AM" src="https://user-images.githubusercontent.com/79858435/225933841-d1ad995b-a498-49fb-9ed9-84bdbfed88f0.png">
+
+
+
+
+
+
+
+
+
 
 
 
