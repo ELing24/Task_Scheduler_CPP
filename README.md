@@ -97,6 +97,41 @@ Undoing an operation: The action to undo would be specified by the user.
 ><img width="633" alt="Screen Shot 2023-03-17 at 5 21 02 AM" src="https://user-images.githubusercontent.com/79858435/225903470-d303608e-c0ac-4325-8f6e-d86941edf526.png">
 > <img width="549" alt="Screen Shot 2023-03-17 at 5 25 39 AM" src="https://user-images.githubusercontent.com/79858435/225904221-a958bf21-ec6c-4679-a0a3-42e5da717cdf.png">
 > <img width="664" alt="Screen Shot 2023-03-17 at 5 26 13 AM" src="https://user-images.githubusercontent.com/79858435/225904288-bce918dc-d740-4c3a-9a86-d8435b344dcc.png">
+> <img width="463" alt="Screen Shot 2023-03-17 at 6 00 12 AM" src="https://user-images.githubusercontent.com/79858435/225911822-f00d2f22-9181-4292-a393-af4650493252.png">
+> 
+> * A 
+> 
+> When the user selects A, the user is prompted to enter the details of the task, such as its name, description, deadline, priority, etc. After the task is added to the current project. Then, the user is presented with the Project Menu again for further options.
+
+> * P
+> 
+> When the user selects P, the user is prompted to edit the name or description of the current project. After the user enters the updated details, the project is updated and the user is presented with the Project Menu again for further options.
+
+> * E
+> 
+> When the user selects E, the application undoes any changes made to the project name or description since the last time the project was saved. Then, the user is presented with the Project Menu again for further options.
+
+> * B 
+> 
+> When the user selects B, the application takes the user back to the main Project Menu.
+
+> * O 
+> 
+> When the user selects O, the application outputs all the tasks in the current project. The user is prompted to select the format in which they want to view the tasks, such as a Priority or Deadline.
+
+> * D 
+> 
+> When the user selects D, the application prompts the user to select the task they want to delete. After the user selects the task, the application deletes the selected task from the current project. 
+
+> * T 
+> 
+> When the user selects T, the application prompts the user to select the task they want to edit or inspect. After the user selects the task, the user is presented with the Task Menu, which allows them to perform actions on the selected task, such as editing its details, making a subtask, marking it as complete, etc.
+
+> * S 
+> 
+> When the user selects S, the application outputs the number of tasks in the current project that have been marked as complete.
+
+
 
 
 
