@@ -6,7 +6,9 @@
 #include <stdlib.h>
 #include <cctype>
 #include <string>
+
 using namespace std;
+
 void editTask(string, Task*);
 void editSubtask(string,string, Task*);
 
@@ -93,7 +95,6 @@ int main()
                 cout << "You have no projects in your inventory" << endl;
             }
         
-            
         }
         else if(toupper(userOption) == 'A')
         {
@@ -529,7 +530,7 @@ int main()
                                             }
                                             else
                                             {
-                                                cout << "Incorrect Option, Try Again:" << endl;
+                                                cout << "Incorrect Option, Try Again: " << endl;
                                             }
 
                                         }
@@ -676,7 +677,7 @@ int main()
 void editTask(string nameOfTask, Task* taskForUserToEdit){
     Task* tmp = taskForUserToEdit;
     string whichToChange = "";
-    cout << "Enter 'name' to modify name, 'description' to modify description, 'deadline' to modify deadline, 'status' to modify status, or 'priority' to change priority:" << endl;
+    cout << "Enter 'name' to modify name, 'description' to modify description, 'deadline' to modify deadline, 'status' to modify status, or 'priority' to change priority: " << endl;
     cin >> whichToChange;
     while(true)
     {
@@ -708,7 +709,7 @@ void editTask(string nameOfTask, Task* taskForUserToEdit){
             {   
                 bool isValidInputForDeadline = true;
                 cout << "Current: " << tmp->getDeadline() << endl;
-                cout << "Enter the new deadline you want to change to: FORMAT(YYYYMMDD):" << endl;
+                cout << "Enter the new deadline you want to change to: FORMAT(YYYYMMDD): " << endl;
                 cout << "EX: 20220122 = January 21st, 2022:" << endl;
                 cin >> newDeadline;
                 for(int i = 0; i < newDeadline.size(); ++i)
@@ -787,7 +788,7 @@ void editTask(string nameOfTask, Task* taskForUserToEdit){
                 }
                 else
                 {
-                    cout << "Invalid Option, Try Again:" << endl;
+                    cout << "Invalid Option, Try Again: " << endl;
                 }
             }
             tmp->changePriority(stoi(newPriority));
@@ -796,7 +797,7 @@ void editTask(string nameOfTask, Task* taskForUserToEdit){
         }
         else
         {
-            cout << "Incorrect option, Try Again" << endl;
+            cout << "Incorrect option, Try Again: " << endl;
             cin >> whichToChange;
         }
 
@@ -866,7 +867,7 @@ void editSubtask(string nameOfSubtask, string nameOfTaskForEditSubtask, Task* ta
         }
         else
         {
-            cout << "Incorrect option, Try Again" << endl;
+            cout << "Incorrect option, Try Again: " << endl;
             cin >> whichToChange;
         }
 
