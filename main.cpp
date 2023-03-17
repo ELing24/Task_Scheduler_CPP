@@ -71,7 +71,7 @@ int main()
             if(mainProgram->ProjectSize() > 0)
             {
                 cout << mainProgram->outputProjects() << endl;
-                cout << "Enter the name of the Project you would like to delete: " << endl;
+                cout << "Enter the name of the Project you would like to delete: ";
                 string ProjectToDelete = "0";
                 cin.ignore();
                 getline(cin,ProjectToDelete);
