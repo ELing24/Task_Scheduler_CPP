@@ -439,24 +439,24 @@ int main()
                                     if(optionsForUndoTask == 'N')
                                     {
                                         taskForUserToEdit->undoName();
-                                        cout << "Successfully Undo Task name" << endl;
+                                        cout << "Successfully Undo Task Name" << endl;
                                     }
                                     else if(optionsForUndoTask == 'D')
                                     {
                                         taskForUserToEdit->undoDescription();
-                                        cout << "Successfully Undo Task description" << endl;
+                                        cout << "Successfully Undo Task Description" << endl;
                                         break;
                                     }
                                     else if(optionsForUndoTask == 'S')
                                     {
                                         taskForUserToEdit->undoStatus();
-                                        cout << "Successfully Undo Task status" << endl;
+                                        cout << "Successfully Undo Task Status" << endl;
                                         break;
                                     }
                                     else if(optionsForUndoTask == 'D')
                                     {
                                         taskForUserToEdit->undoDeadline();
-                                        cout << "Successfully Undo Task deadline" << endl;
+                                        cout << "Successfully Undo Task Deadline" << endl;
                                         break;
                                     }
                                     else if(optionsForUndoTask == 'P')
@@ -600,7 +600,7 @@ int main()
                                 }
                                 else if(optionsForTasks == 'P')
                                 {
-                                    cout << "The priority of this task is " << taskForUserToEdit->getPriority() << endl;
+                                    cout << "The Priority of this task is " << taskForUserToEdit->getPriority() << endl;
                                 }
                                 else if(optionsForTasks == 'Z')
                                 {
@@ -635,7 +635,7 @@ int main()
                     }
                     else if(optionsForProject == 'S')
                     {
-                        cout << "You have " << projectToEdit->completedTasks() << " in you project" << endl;
+                        cout << "You have " << projectToEdit->completedTasks() << " in your project" << endl;
                     }
                     else if(optionsForProject == 'Z')
                     {
