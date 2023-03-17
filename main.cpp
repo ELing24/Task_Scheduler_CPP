@@ -71,7 +71,7 @@ int main()
             if(mainProgram->ProjectSize() > 0)
             {
                 cout << mainProgram->outputProjects() << endl;
-                cout << "Enter the name of the Project you would like to delete: ";
+                cout << "Enter the name of the Project you would like to delete: " << endl;
                 string ProjectToDelete = "0";
                 cin.ignore();
                 getline(cin,ProjectToDelete);
@@ -141,7 +141,7 @@ int main()
                 while(toupper(optionsForProject) != 'B')
                 {
                     cout << endl;
-                    cout << "Project Edit Menu:" << endl;
+                    cout << "Project Edit Menu: " << endl;
                     cout << "Enter A to add a task in this project" << endl;
                     cout << "Enter P to edit the project's name or description" << endl;
                     cout << "Enter E to undo an edit for the project's name or description" << endl;
@@ -171,7 +171,7 @@ int main()
                         }
                         else
                         {
-                            cout << "Invalid Option, Try Again" << endl;
+                            cout << "Invalid Option, Try Again: " << endl;
                         }
                     }
                     optionsForProject = toupper(optionsForProject);
@@ -205,7 +205,7 @@ int main()
                             }
                             else
                             {
-                                cout << "Invalid Option, Try Again" << endl;
+                                cout << "Invalid Option, Try Again: " << endl;
                             }
                         }
                     }
@@ -234,7 +234,7 @@ int main()
                                 }
                                 else
                                 {
-                                    cout << "Incorrect Option, Try Again" << endl;
+                                    cout << "Incorrect Option, Try Again: " << endl;
                                 }
                             }
                             projectToEdit->deleteTask(findTask);
@@ -266,7 +266,7 @@ int main()
                             }
                             else
                             {
-                                cout << "Incorrect Option, Try Again" << endl;
+                                cout << "Incorrect Option, Try Again: " << endl;
                                 cin >> optionsForUndoProject;
                             }
                         }
@@ -318,8 +318,8 @@ int main()
                         while(correctDeadlineInput == false)
                         {   
                             bool isValidInputForDeadline = true;
-                            cout << "Enter a deadline for this task: FORMAT(YYYYMMDD):" << endl;
-                            cout << "EX: 20220122 = January 21st, 2022:" << endl;
+                            cout << "Enter a deadline for this task: FORMAT(YYYYMMDD): " << endl;
+                            cout << "EX: 20220122 = January 21st, 2022: " << endl;
                             cin >> deadlineForNewTask;
                             for(int i = 0; i < deadlineForNewTask.size(); ++i)
                             {
@@ -387,7 +387,7 @@ int main()
                             while(optionsForTasks != 'B')
                             {
                                 cout << endl;
-                                cout << "Task and Subtask Menu:" << endl;
+                                cout << "Task and Subtask Menu: " << endl;
                                 cout << "Enter B to go back to previous page" << endl;
                                 cout << "Enter A to add subtask for this task" << endl;
                                 cout << "Enter E to edit a feature of the task" << endl;
@@ -489,7 +489,7 @@ int main()
                                             }
                                             else
                                             {
-                                                cout << "Incorrect Option, Try Again:" << endl;
+                                                cout << "Incorrect Option, Try Again: " << endl;
                                             }
 
                                         }
@@ -710,7 +710,7 @@ void editTask(string nameOfTask, Task* taskForUserToEdit){
                 bool isValidInputForDeadline = true;
                 cout << "Current: " << tmp->getDeadline() << endl;
                 cout << "Enter the new deadline you want to change to: FORMAT(YYYYMMDD): " << endl;
-                cout << "EX: 20220122 = January 21st, 2022:" << endl;
+                cout << "EX: 20220122 = January 21st, 2022: " << endl;
                 cin >> newDeadline;
                 for(int i = 0; i < newDeadline.size(); ++i)
                 {
