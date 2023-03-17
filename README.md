@@ -179,27 +179,14 @@ Undoing an operation: The action to undo would be specified by the user.
 > When the user picks O, an output of a list of all subtasks will be presented to the user. And Subtask Menu will appear with further options.
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
  ## Installation/Usage
  > Instructions on installing and running your application
+ > 1. Recursively clone this repository onto your local machine with git clone --recursive <https://github.com/cs100/final-project-vowels>
+ > 2. Change directory into the local repository you just created using cd
+ > 3. Once inside the local repository, run cmake .
+ > 4. run make
+ > 5. run ./runAllFiles
+ > 6. You should be now prompted with the main menu. (The specifics of how to navigate through the menu is explained with the screenshots above)
  ## Testing
  > How was your project tested/validated?
  
