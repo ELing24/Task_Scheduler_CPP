@@ -71,7 +71,7 @@ int main()
             if(mainProgram->ProjectSize() > 0)
             {
                 cout << mainProgram->outputProjects() << endl;
-                cout << "Enter the name of the Project you would like to delete:" << endl;
+                cout << "Enter the name of the Project you would like to delete: " << endl;
                 string ProjectToDelete = "0";
                 cin.ignore();
                 getline(cin,ProjectToDelete);
@@ -226,7 +226,7 @@ int main()
                             while(true)
                             {
                                 cout << projectToEdit->outputTasks(true) << endl;
-                                cout << "Enter the name of the task you want to delete:" << endl;
+                                cout << "Enter the name of the task you want to delete: " << endl;
                                 getline(cin,findTask);
                                 if(projectToEdit->doesTaskExist(findTask) == true)
                                 {
@@ -292,7 +292,7 @@ int main()
                                 }
                                 else
                                 {
-                                    cout << "Invalid option, Try Again" << endl;
+                                    cout << "Invalid option, Try Again: " << endl;
                                 }
                             }
                         }
@@ -334,7 +334,7 @@ int main()
                             }
                             else
                             {
-                                cout << "Invalid Option, Try Again" << endl;
+                                cout << "Invalid Option, Try Again: " << endl;
                             }
                         }
                         bool correctPriorityInput = false;
@@ -356,7 +356,7 @@ int main()
                             }
                             else
                             {
-                                cout << "Invalid Option, Try Again:" << endl;
+                                cout << "Invalid Option, Try Again: " << endl;
                             }
                         }
                         projectToEdit->addTask(nameForNewTask, descriptionForNewTask, stoi(deadlineForNewTask), stoi(priorityForNewTask), statusForNewTask);
@@ -380,7 +380,7 @@ int main()
                                 }
                                 else
                                 {
-                                    cout << "Invalid Input, Try Again" << endl;
+                                    cout << "Invalid Input, Try Again: " << endl;
                                 }
                             }
                             char optionsForTasks = '0';
@@ -419,7 +419,7 @@ int main()
                                     }
                                     else
                                     {
-                                        cout << "Invalid Option, Try Again" << endl;
+                                        cout << "Invalid Option, Try Again: " << endl;
                                     }
                                 }
                                 optionsForTasks = toupper(optionsForTasks);
@@ -468,7 +468,7 @@ int main()
                                     }
                                     else
                                     {
-                                        cout << "Invalid Option, Try Again" << endl;
+                                        cout << "Invalid Option, Try Again: " << endl;
                                     }
                                 }
                                 else if(optionsForTasks == 'S')
@@ -522,7 +522,7 @@ int main()
                                         while(true)
                                         {
                                             findSubtask = "0";
-                                            cout << "Enter the name of the subtask you want to undo:" << endl;
+                                            cout << "Enter the name of the subtask you want to undo: " << endl;
                                             getline(cin,findSubtask);
                                             if(taskForUserToEdit->doesSubtaskExist(findSubtask)==true)
                                             {
@@ -550,7 +550,7 @@ int main()
                                             else if(optionsForUndoSubtask == 'D')
                                             {
                                                 subtaskForUserToEdit->undoDescription();
-                                                cout << "Successfully Undo Subtask description" << endl;
+                                                cout << "Successfully Undo Subtask Description" << endl;
                                                 break;
                                             }
                                             else if(optionsForUndoSubtask == 'S')
@@ -561,7 +561,7 @@ int main()
                                             }
                                             else
                                             {
-                                                cout << "Invalid Option, Try Again" << endl;
+                                                cout << "Invalid Option, Try Again: " << endl;
                                             }
                                         }
                                     }
@@ -588,7 +588,7 @@ int main()
                                             }
                                             else
                                             {
-                                                cout << "Incorrect Option, Try Again" << endl;
+                                                cout << "Incorrect Option, Try Again: " << endl;
                                             }
 
                                         }
@@ -624,7 +624,7 @@ int main()
                                 }
                                 else
                                 {
-                                    cout << "Invalid Option, Try Again" << endl;
+                                    cout << "Invalid Option, Try Again: " << endl;
                                 }
                                 
                             }
@@ -656,7 +656,7 @@ int main()
                     }
                     else
                     {
-                        cout << "Invalid Option, Try Again" << endl;
+                        cout << "Invalid Option, Try Again: " << endl;
                     }
                 }
             }
@@ -667,7 +667,7 @@ int main()
         }
         else
         {
-            cout << "Invalid Option, Try Again" << endl;
+            cout << "Invalid Option, Try Again: " << endl;
         }
     }
     delete mainProgram;
@@ -725,7 +725,7 @@ void editTask(string nameOfTask, Task* taskForUserToEdit){
                 }
                 else
                 {
-                    cout << "Invalid Option, Try Again" << endl;
+                    cout << "Invalid Option, Try Again: " << endl;
                 }
             }
             tmp->changeDeadline(stoi(newDeadline));
